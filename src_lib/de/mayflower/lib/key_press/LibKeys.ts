@@ -38,12 +38,12 @@ class LibKeys
         };
     }
 
-    public static getCurrentKey():Key
+    public static getCurrentKey():PressedKey
     {
         if (null === this.keyVO) {
             throw new Error('Please call init() first!');
         }
 
-        return new Key(this.keyVO.getBareCode());
+        return new PressedKey(this.keyVO.getBareCode());
     }
 }

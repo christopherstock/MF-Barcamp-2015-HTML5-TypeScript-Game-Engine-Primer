@@ -1,4 +1,4 @@
-class Key
+class PressedKey
 {
     private code:number;
 
