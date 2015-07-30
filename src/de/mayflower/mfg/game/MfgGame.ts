@@ -17,7 +17,7 @@
          *****************************************************************************/
         public      static      player              :MfgPlayer                  = null;
 
-        private     static      tickCounter         :number                     =0;
+        private     static      tickCounter         :number                     = 0;
 
         /*****************************************************************************
         *   Inits the game engine.
@@ -27,12 +27,14 @@
             //set document's title
             document.title = MfgSettings.WEBPAGE_TITLE;
 
+            //create and add canvas context
             MfgGame.canvas = new MfgCanvas( MfgSettings.CANVAS_WIDTH, MfgSettings.CANVAS_HEIGHT );
+            document.body.appendChild( MfgGame.canvas.getCanvasTag() );
             
+            //create player instance
             MfgGame.player = new MfgPlayer( 40, 80, 60, 150 );
             
-            document.body.appendChild( MfgGame.canvas.getCanvasTag() );
-
+            //try drawing a rectangle
             LibDrawing.fillRect(
                 MfgGame.canvas.getContext(),
                 MfgSettings.COLOR_PLAYER,
@@ -41,19 +43,16 @@
                 MfgGame.player.getWidth(),
                 MfgGame.player.getHeight()
             );
-            
-            setInterval(MfgGame.tick,MfgSettings.THREAD_DELAY);
-            
-            console.log();
-            var locationSite=window.location.pathname.replace("index.html","");
-            
+
+            //try drawing an image
             var imageZelda=new Image();
-            imageZelda.src=locationSite+"res/image/player1.png";
+            imageZelda.src = "res/image/player1.png";
             imageZelda.onload=function(){
                 MfgGame.canvas.getContext().drawImage(imageZelda,0,0);
             };
 
-
+            //start game loop
+            setInterval( MfgGame.tick, MfgSettings.THREAD_DELAY );
         }
 
         /*****************************************************************************
@@ -62,7 +61,7 @@
         public static tick():void
         {
             MfgGame.tickCounter++;
-            console.log("test: "+MfgGame.tickCounter);
+            console.log( "test: " + MfgGame.tickCounter );
             MfgGame.render();
             MfgGame.draw();
 
@@ -73,9 +72,6 @@
         *****************************************************************************/
         public static render():void
         {
-            var player = MfgGame.player;
-
-            player.setY(player.getY() + 1);
 
 
         }
@@ -85,18 +81,5 @@
         *****************************************************************************/
         public static draw():void
         {
-            var canvasContext = MfgGame.canvas.getContext();
-            var player        = MfgGame.player;
-
-            MfgGame.canvas.getContext().clearRect(0, 0, canvasContext.canvas.width, canvasContext.canvas.height);
-
-            LibDrawing.fillRect(
-                MfgGame.canvas.getContext(),
-                MfgSettings.COLOR_PLAYER,
-                player.getX(),
-                player.getY(),
-                player.getWidth(),
-                player.getHeight()
-            );
         }
     }
