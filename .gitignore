@@ -4,3 +4,5 @@ node_modules
 /index.js.map
 /src/de/mayflower/mfg/Mfg.js
 /src/de/mayflower/mfg/Mfg.js.map
+/src/de/mayflower/mfg/game/MfgGame.js
+/src/de/mayflower/mfg/game/MfgGame.js.map
