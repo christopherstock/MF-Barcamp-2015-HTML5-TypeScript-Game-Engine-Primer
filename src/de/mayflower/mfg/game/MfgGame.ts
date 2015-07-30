@@ -13,7 +13,7 @@
         public      static      canvas              :MfgCanvas                  = null;
 
         /*****************************************************************************
-         *   The canvas context.
+         *   The player object.
          *****************************************************************************/
         public      static      player              :MfgPlayer                  = null;
 
