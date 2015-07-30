@@ -19,6 +19,8 @@
 
         private     static      tickCounter         :number                     =0;
 
+        private     static      tickCounter         :number                     =0;
+
         /*****************************************************************************
         *   Inits the game engine.
         *****************************************************************************/
@@ -44,6 +46,11 @@
             console.log();
             var locationSite=window.location.pathname.replace("index.html","");
 
+            var handlers = [
+                new ConsoleKeyLogger()
+            ];
+
+            LibKeys.init(handlers);
 
             var imageZelda=new Image();
             imageZelda.src=locationSite+"res/image/player1.png";
