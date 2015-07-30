@@ -8,8 +8,8 @@ var MfgCanvas = (function () {
     /*****************************************************************************
     *   Inits the canvas.
     *
-    *   @param  aTargetWidth    The target width for this canvas to assign.
-    *   @param  aTargetHeight   The target height for this canvas to assign.
+    *   @param {number} aTargetWidth    The target width for this canvas to assign.
+    *   @param {number} aTargetHeight   The target height for this canvas to assign.
     *****************************************************************************/
     function MfgCanvas(aTargetWidth, aTargetHeight) {
         /** The HTML canvas tag that can be added to the website's body. */

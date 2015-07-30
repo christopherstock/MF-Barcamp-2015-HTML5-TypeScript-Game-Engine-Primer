@@ -16,8 +16,8 @@
         /*****************************************************************************
         *   Inits the canvas.
         *
-        *   @param  aTargetWidth    The target width for this canvas to assign.
-        *   @param  aTargetHeight   The target height for this canvas to assign.
+        *   @param {number} aTargetWidth    The target width for this canvas to assign.
+        *   @param {number} aTargetHeight   The target height for this canvas to assign.
         *****************************************************************************/
         public constructor( aTargetWidth:number, aTargetHeight:number )
         {

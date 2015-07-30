@@ -7,7 +7,7 @@
 class MfgDebug
 {
     /**
-     * @param string logMessage
+     * @param {string} logMessage
      */
     public static log(logMessage:string):void
     {
