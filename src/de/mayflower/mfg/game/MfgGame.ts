@@ -50,7 +50,7 @@
             };
 
             //init key system
-            LibKeys.init( [ new ConsoleKeyLogger() ] );
+            LibKeySystem.init();
 
             //start game loop
             setInterval( MfgGame.tick, MfgSettings.THREAD_DELAY );
@@ -70,6 +70,8 @@
         *****************************************************************************/
         public static render():void
         {
+            //MfgDebug.log( "Key DOWN pressed: [" + LibKeySystem.isKeyPressed( MfgSettings.KEY_DOWN ) + "] LEFT pressed: [" + LibKeySystem.isKeyPressed( MfgSettings.KEY_LEFT ) + "]" );
+
             MfgGame.player.setX( MfgGame.player.getX() + 2 );
             MfgGame.player.setY( MfgGame.player.getY() + 1 );
         }
