@@ -17,8 +17,6 @@
          *****************************************************************************/
         public      static      player              :MfgPlayer                  = null;
 
-        private     static      tickCounter         :number                     = 0;
-
         /*****************************************************************************
         *   Inits the game engine.
         *****************************************************************************/
@@ -63,8 +61,6 @@
         *****************************************************************************/
         public static tick():void
         {
-            MfgGame.tickCounter++;
-            console.log( "test: " + MfgGame.tickCounter );
             MfgGame.render();
             MfgGame.draw( MfgGame.canvas.getContext() );
         }
