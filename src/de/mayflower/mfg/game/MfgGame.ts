@@ -16,7 +16,9 @@
          *   The player object.
          *****************************************************************************/
         public      static      player              :MfgPlayer                  = null;
-        
+
+        private     static      tickCounter         :number                     =0;
+
         /*****************************************************************************
         *   Inits the game engine.
         *****************************************************************************/
@@ -26,7 +28,9 @@
             document.title = MfgSettings.WEBPAGE_TITLE;
 
             MfgGame.canvas = new MfgCanvas( MfgSettings.CANVAS_WIDTH, MfgSettings.CANVAS_HEIGHT );
+            
             MfgGame.player = new MfgPlayer( 40, 80, 60, 150 );
+            
             document.body.appendChild( MfgGame.canvas.getCanvasTag() );
 
             LibDrawing.fillRect(
@@ -39,21 +43,44 @@
             );
             
             setInterval(MfgGame.tick,MfgSettings.THREAD_DELAY);
-
-            var handlers = [
-                new ConsoleKeyLogger()
-            ];
-
-            InitKeyPress.init(handlers);
             
-            var testCounter:number=0;
-            setInterval(function(){
-                testCounter++;
-                console.log("test: "+testCounter);
+            console.log();
+            var locationSite=window.location.pathname.replace("index.html","");
+            
+            var imageZelda=new Image();
+            imageZelda.src=locationSite+"res/image/player1.png";
+            imageZelda.onload=function(){
+                MfgGame.canvas.getContext().drawImage(imageZelda,0,0);
+            };
 
-            },1000);
+
+        }
+
+        /*****************************************************************************
+        *   Inits the game engine.
+        *****************************************************************************/
+        public static tick():void
+        {
+            MfgGame.tickCounter++;
+            console.log("test: "+MfgGame.tickCounter);
+            MfgGame.render();
+            MfgGame.draw();
+
+        }
+
+        /*****************************************************************************
+        *   Specifies all rendering operations.
+        *****************************************************************************/
+        public static render():void
+        {
 
 
+        }
 
+        /*****************************************************************************
+        *   Specifies all drawing operations.
+        *****************************************************************************/
+        public static draw():void
+        {
         }
     }
