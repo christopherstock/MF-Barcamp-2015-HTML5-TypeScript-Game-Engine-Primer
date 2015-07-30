@@ -43,11 +43,8 @@
             );
 
 
-<<<<<<< Updated upstream
-            }, MfgSettings.GAME_SPEED);
-=======
-            setInterval(MfgGame.tick,MfgSettings.gameSpeed);
->>>>>>> Stashed changes
+            setInterval(MfgGame.tick,MfgSettings.GAME_SPEED);
+
 
 
 
