@@ -1,67 +1,67 @@
 /*****************************************************************************
- *   Handles the main game logic.
+ *   Represents one player.
  *
  *   @author     C. Heldt
  *   @version    0.0.1
  *****************************************************************************/
 class MfgPlayer
 {
-    private xCoordinate : number;
-    private yCoordinate : number;
-    private width :       number;
-    private height :      number;
+    private x           :number         = 0;
+    private y           :number         = 0;
+    private width       :number         = 0;
+    private height      :number         = 0;
 
     /**
      *
-     * @param xCoordinate
-     * @param yCoordinate
+     * @param x
+     * @param y
      * @param width
      * @param height
      */
-    constructor(xCoordinate:number, yCoordinate:number, width:number, height:number)
+    constructor(x:number, y:number, width:number, height:number)
     {
-        this.xCoordinate = xCoordinate;
-        this.yCoordinate = yCoordinate;
-        this.width       = width;
-        this.height      = height;
+        this.x      = x;
+        this.y      = y;
+        this.width  = width;
+        this.height = height;
     }
 
     /**
      * @return {number}
      */
-    getXCoordinate():number
+    public getX():number
     {
-        return this.xCoordinate;
+        return this.x;
     }
 
     /**
-     * @param xCoordinate
+     * @param x
      */
-    setXCoordinate(xCoordinate:number)
+    public setX(x:number)
     {
-        this.xCoordinate = xCoordinate;
-    }
-
-    /**
-     * @return {number}
-     */
-    getYCoordinate():number
-    {
-        return this.yCoordinate;
-    }
-
-    /**
-     * @param yCoordinate
-     */
-    setYCoordinate(yCoordinate:number)
-    {
-        this.yCoordinate = yCoordinate;
+        this.x = x;
     }
 
     /**
      * @return {number}
      */
-    getWidth():number
+    public getY():number
+    {
+        return this.y;
+    }
+
+    /**
+     * @param y
+     */
+    public setY(y:number)
+    {
+        this.y = y;
+    }
+
+    /**
+     * @return {number}
+     */
+    public getWidth():number
     {
         return this.width;
     }
@@ -69,7 +69,7 @@ class MfgPlayer
     /**
      * @param width
      */
-    setWidth(width:number)
+    public setWidth(width:number)
     {
         this.width = width;
     }
@@ -77,7 +77,7 @@ class MfgPlayer
     /**
      * @return {number}
      */
-    getHeight():number
+    public getHeight():number
     {
         return this.height;
     }
@@ -85,7 +85,7 @@ class MfgPlayer
     /**
      * @param height
      */
-    setHeight(height:number)
+    public setHeight(height:number)
     {
         this.height = height;
     }
