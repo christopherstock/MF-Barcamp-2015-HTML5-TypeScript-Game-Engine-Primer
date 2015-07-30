@@ -19,15 +19,13 @@
 
         private     static      tickCounter         :number                     =0;
 
-        private     static      tickCounter         :number                     =0;
-
         /*****************************************************************************
         *   Inits the game engine.
         *****************************************************************************/
         public static init():void
         {
             //set document's title
-            document.title = 'Mayflower Barcamp 2015 - HTML5 TypeScript Game Engine Primer';
+            document.title = MfgSettings.WEBPAGE_TITLE;
 
             MfgGame.canvas = new MfgCanvas( MfgSettings.CANVAS_WIDTH, MfgSettings.CANVAS_HEIGHT );
             
@@ -46,11 +44,6 @@
             console.log();
             var locationSite=window.location.pathname.replace("index.html","");
 
-            var handlers = [
-                new ConsoleKeyLogger()
-            ];
-
-            LibKeys.init(handlers);
 
             var imageZelda=new Image();
             imageZelda.src=locationSite+"res/image/player1.png";

@@ -16,6 +16,9 @@
         /** The color of the player. */
         public          static          COLOR_PLAYER            :string             = "rgba( 255, 0, 0, 1.0  )";
 
-        /** The speed of the game */
-        public          static          GAME_SPEED              :number             = 1000;
+        /** The delay of the game. The less this variable is set the faster runs the game. */
+        public          static          THREAD_DELAY            :number             = 40;
+
+        /** The title of the web page. */
+        public          static          WEBPAGE_TITLE           :string             = "Mayflower Barcamp 2015 - HTML5 TypeScript Game Engine Primer";
     }
