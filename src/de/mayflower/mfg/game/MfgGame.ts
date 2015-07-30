@@ -71,11 +71,8 @@
         *****************************************************************************/
         public static render():void
         {
-            var player = MfgGame.player;
-
-            player.setY(player.getY() + 1);
-
-
+            MfgGame.player.setX( MfgGame.player.getX() + 2 );
+            MfgGame.player.setY( MfgGame.player.getY() + 1 );
         }
 
         /*****************************************************************************
@@ -83,7 +80,14 @@
         *****************************************************************************/
         public static draw( ctx:CanvasRenderingContext2D ):void
         {
-            LibDrawing.fillRect( ctx, MfgSettings.COLOR_BG, 0, 0, MfgGame.canvas.getWidth(), MfgGame.canvas.getHeight() );
+            LibDrawing.fillRect(
+                ctx,
+                MfgSettings.COLOR_BG,
+                0,
+                0,
+                MfgGame.canvas.getWidth(),
+                MfgGame.canvas.getHeight()
+            );
 
             LibDrawing.fillRect(
                 MfgGame.canvas.getContext(),
