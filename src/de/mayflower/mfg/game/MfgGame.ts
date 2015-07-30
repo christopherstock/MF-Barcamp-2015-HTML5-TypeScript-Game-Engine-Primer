@@ -30,7 +30,7 @@
                 testCounter++;
                 console.log("test: "+testCounter);
 
-            },1000);
+            }, MfgSettings.GAME_SPEED);
 
 
 
