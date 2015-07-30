@@ -31,7 +31,7 @@
             
             //create player instance
             MfgGame.player = new MfgPlayer( 40, 80, 60, 150 );
-            
+
             //try drawing a rectangle
             LibDrawing.fillRect(
                 MfgGame.canvas.getContext(),
@@ -70,10 +70,21 @@
         *****************************************************************************/
         public static render():void
         {
-            //MfgDebug.log( "Key DOWN pressed: [" + LibKeySystem.isKeyPressed( MfgSettings.KEY_DOWN ) + "] LEFT pressed: [" + LibKeySystem.isKeyPressed( MfgSettings.KEY_LEFT ) + "]" );
+            var width = MfgGame.canvas.getWidth();
+            var height = MfgGame.canvas.getHeight();
+            var nextX = MfgGame.player.getX() - 2;
+            var nextY = MfgGame.player.getY() - 1;
 
-            MfgGame.player.setX( MfgGame.player.getX() + 2 );
-            MfgGame.player.setY( MfgGame.player.getY() + 1 );
+            if(MfgGame.player.getWidth() + nextX < width
+                && MfgGame.player.getHeight() + nextY < height
+                && nextX > 0 && nextY > 0
+            ) {
+                MfgGame.player.setX(nextX);
+                MfgGame.player.setY(nextY);
+            } else {
+                MfgGame.player.setX(0);
+                MfgGame.player.setY(0);
+            }
         }
 
         /*****************************************************************************

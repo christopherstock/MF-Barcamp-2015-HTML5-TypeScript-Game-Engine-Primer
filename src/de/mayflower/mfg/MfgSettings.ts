@@ -16,7 +16,9 @@
         /** The color of the player. */
         public          static          COLOR_PLAYER            :string             = "rgba( 255, 0, 0, 1.0 )";
         /** The color of the player. */
-        public          static          COLOR_BG                :string             = "rgba( 100, 100, 100, 1.0 )";
+        public          static          COLOR_BG                :string             = "rgba( 0,   0, 0, 1.0  )";
+        /** The color of a collectable item. */
+        public          static          COLOR_ITEM              :string             = "green";
 
         /** The delay of the game. The less this variable is set the faster runs the game. */
         public          static          THREAD_DELAY            :number             = 40;
