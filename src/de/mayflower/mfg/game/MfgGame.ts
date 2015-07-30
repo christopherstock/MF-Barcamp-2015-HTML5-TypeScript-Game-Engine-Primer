@@ -20,10 +20,11 @@
             //set document's title
             document.title = 'Mayflower Barcamp 2015 - HTML5 TypeScript Game Engine Primer';
 
-            MfgGame.canvas = new MfgCanvas( 600, 250 );
+            MfgGame.canvas = new MfgCanvas( MfgSettings.CANVAS_WIDTH, MfgSettings.CANVAS_HEIGHT );
+            document.body.appendChild( MfgGame.canvas.getCanvasTag() );
 
 
-            MfgGame.canvas.getContext().fillStyle = "rgba( 255,   255, 0,   1.0  )";
+            MfgGame.canvas.getContext().fillStyle = MfgSettings.COLOR_PLAYER;
             MfgGame.canvas.getContext().fillRect( 10, 50, 30, 70 );
 
 

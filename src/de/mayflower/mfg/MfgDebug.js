@@ -8,7 +8,7 @@ var MfgDebug = (function () {
     function MfgDebug() {
     }
     /**
-     * @param {string} logMessage
+     * @param logMessage
      */
     MfgDebug.log = function (logMessage) {
         console.log(logMessage);
