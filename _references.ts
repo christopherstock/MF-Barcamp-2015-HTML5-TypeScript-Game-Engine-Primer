@@ -1,4 +1,7 @@
 /// <reference path="src_lib/de/mayflower/lib/ui/LibDrawing.ts" />
+/// <reference path="src_lib/de/mayflower/lib/key_press/InitKeyPress.ts" />
+/// <reference path="src_lib/de/mayflower/lib/key_press/KeyEventHandler.ts" />
+/// <reference path="src_lib/de/mayflower/lib/key_press/handler/ConsoleKeyLogger.ts" />
 /// <reference path="src/de/mayflower/mfg/MfgDebug.ts" />
 /// <reference path="src/de/mayflower/mfg/Mfg.ts" />
 /// <reference path="src/de/mayflower/mfg/MfgSettings.ts" />
