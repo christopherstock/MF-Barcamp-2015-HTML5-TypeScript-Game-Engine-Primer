@@ -39,6 +39,16 @@
                 MfgGame.player.getWidth(),
                 MfgGame.player.getHeight()
             );
+            console.log();
+            var locationSite=window.location.pathname.replace("index.html","");
+
+
+            var imageZelda=new Image();
+            imageZelda.src=locationSite+"res/image/player1.png";
+            imageZelda.onload=function(){
+                MfgGame.canvas.getContext().drawImage(imageZelda,0,0);
+            };
+
 
             setInterval(MfgGame.tick,MfgSettings.GAME_SPEED);
         }
