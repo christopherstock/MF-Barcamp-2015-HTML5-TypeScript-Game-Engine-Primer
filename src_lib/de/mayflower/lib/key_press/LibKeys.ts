@@ -1,6 +1,7 @@
 class LibKeys
 {
-    public static keyVO:KeyValidator;
+    public static keyVO:KeyValidator = null;
+    public static keySkeleton:PressedKey = null;
 
     /**
      * Init handlers
@@ -44,6 +45,11 @@ class LibKeys
             throw new Error('Please call init() first!');
         }
 
-        return new PressedKey(this.keyVO.getBareCode());
+        if (null === this.keySkeleton) {
+            this.keySkeleton = new PressedKey();
+        }
+
+        this.keySkeleton.fill(this.keyVO.getBareCode());
+        return this.keySkeleton;
     }
 }

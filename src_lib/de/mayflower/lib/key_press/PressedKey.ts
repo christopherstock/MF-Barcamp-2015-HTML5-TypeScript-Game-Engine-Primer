@@ -2,11 +2,12 @@ class PressedKey
 {
     private code:number;
 
-    constructor(keyCode:number) {
+    public fill(keyCode:number) {
         this.code = keyCode;
     }
 
-    public compare(keyCode:number):boolean {
+    public compare(keyCode:number):boolean
+    {
         return this.code === keyCode;
     }
 
