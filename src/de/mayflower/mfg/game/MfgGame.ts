@@ -13,6 +13,11 @@
         public      static      canvas              :MfgCanvas                  = null;
 
         /*****************************************************************************
+         *   The player object.
+         *****************************************************************************/
+        public      static      player              :MfgPlayer                  = null;
+        
+        /*****************************************************************************
         *   Inits the game engine.
         *****************************************************************************/
         public static init():void
@@ -23,19 +28,29 @@
             MfgGame.canvas = new MfgCanvas( MfgSettings.CANVAS_WIDTH, MfgSettings.CANVAS_HEIGHT );
             document.body.appendChild( MfgGame.canvas.getCanvasTag() );
 
-            LibDrawing.fillRect(MfgGame.canvas.getContext(), MfgSettings.COLOR_PLAYER, 40, 80, 60, 150);
+            LibDrawing.fillRect(
+                MfgGame.canvas.getContext(),
+                MfgSettings.COLOR_PLAYER,
+                MfgGame.player.getX(),
+                MfgGame.player.getY(),
+                MfgGame.player.getWidth(),
+                MfgGame.player.getHeight()
+            );
 
             var handlers = [
                 new ConsoleKeyLogger()
             ];
 
             InitKeyPress.init(handlers);
-
+            
             var testCounter:number=0;
             setInterval(function(){
                 testCounter++;
                 console.log("test: "+testCounter);
 
             },1000);
+
+
+
         }
     }
