@@ -14,7 +14,7 @@
         public          static          CANVAS_HEIGHT           :number             = 600;
 
         /** The color of the player. */
-        public          static          COLOR_PLAYER            :string             = "rgba( 255, 0, 0, 1.0  )";
+        public          static          COLOR_PLAYER            :string             = "rgba( 255, 0, 0, 1.0 )";
         /** The color of the player. */
         public          static          COLOR_BG                :string             = "rgba( 0,   0, 0, 1.0  )";
         /** The color of a collectable item. */
@@ -25,4 +25,14 @@
 
         /** The title of the web page. */
         public          static          WEBPAGE_TITLE           :string             = "Mayflower Barcamp 2015 - HTML5 TypeScript Game Engine Primer";
+
+        /** The keycode that represents the 'ARROW LEFT' key. */
+        public          static          KEY_LEFT                :number         = 37;
+        /** The keycode that represents the 'ARROW UP' key. */
+        public          static          KEY_UP                  :number         = 38;
+        /** The keycode that represents the 'ARROW RIGHT' key. */
+        public          static          KEY_RIGHT               :number         = 39;
+        /** The keycode that represents the 'ARROW DOWN' key. */
+        public          static          KEY_DOWN                :number         = 40;
+
     }

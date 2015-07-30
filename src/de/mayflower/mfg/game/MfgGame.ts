@@ -50,7 +50,7 @@
             };
 
             //init key system
-            LibKeys.init( [ new ConsoleKeyLogger() ] );
+            LibKeySystem.init();
 
             //start game loop
             setInterval( MfgGame.tick, MfgSettings.THREAD_DELAY );
@@ -70,21 +70,18 @@
         *****************************************************************************/
         public static render():void
         {
-            var width = MfgGame.canvas.getWidth();
-            var height = MfgGame.canvas.getHeight();
-            var nextX = MfgGame.player.getX() - 2;
-            var nextY = MfgGame.player.getY() - 1;
+            //move player
+            MfgGame.player.setX( MfgGame.player.getX() + 15 );
+            MfgGame.player.setY( MfgGame.player.getY() + 5 );
 
-            if(MfgGame.player.getWidth() + nextX < width
-                && MfgGame.player.getHeight() + nextY < height
-                && nextX > 0 && nextY > 0
-            ) {
-                MfgGame.player.setX(nextX);
-                MfgGame.player.setY(nextY);
-            } else {
-                MfgGame.player.setX(0);
-                MfgGame.player.setY(0);
-            }
+            //if ( LibKeySystem.isKey )
+
+
+            //clip level bounds
+            if ( MfgGame.player.getX() >= MfgGame.canvas.getWidth()  - MfgGame.player.getWidth()  ) MfgGame.player.setX( MfgGame.canvas.getWidth()  - MfgGame.player.getWidth()  );
+            if ( MfgGame.player.getY() >= MfgGame.canvas.getHeight() - MfgGame.player.getHeight() ) MfgGame.player.setY( MfgGame.canvas.getHeight() - MfgGame.player.getHeight() );
+            if ( MfgGame.player.getX() < 0 ) MfgGame.player.setX( 0 );
+            if ( MfgGame.player.getY() < 0 ) MfgGame.player.setY( 0 );
         }
 
         /*****************************************************************************
