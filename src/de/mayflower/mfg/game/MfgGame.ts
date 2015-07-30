@@ -16,7 +16,9 @@
          *   The player object.
          *****************************************************************************/
         public      static      player              :MfgPlayer                  = null;
-        
+
+        private     static      tickCounter         :number                     =0;
+
         /*****************************************************************************
         *   Inits the game engine.
         *****************************************************************************/
@@ -38,19 +40,35 @@
                 MfgGame.player.getHeight()
             );
 
-            var handlers = [
-                new ConsoleKeyLogger()
-            ];
+            setInterval(MfgGame.tick,MfgSettings.GAME_SPEED);
+        }
 
-            InitKeyPress.init(handlers);
-            
-            var testCounter:number=0;
-            setInterval(function(){
-                testCounter++;
-                console.log("test: "+testCounter);
+        /*****************************************************************************
+        *   Inits the game engine.
+        *****************************************************************************/
+        public static tick():void
+        {
+            MfgGame.tickCounter++;
+            console.log("test: "+MfgGame.tickCounter);
 
-            },1000);
+            MfgGame.render();
+            MfgGame.draw();
+        }
 
+        /*****************************************************************************
+        *   Specifies all rendering operations.
+        *****************************************************************************/
+        public static render():void
+        {
+
+
+        }
+
+        /*****************************************************************************
+        *   Specifies all drawing operations.
+        *****************************************************************************/
+        public static draw():void
+        {
 
 
         }
