@@ -18,7 +18,7 @@
         public static init():void
         {
             //set document's title
-            document.title = 'Mayflower Barcamp 2015 - HTML5 TypeScript Game Engine Primer';
+            document.title = MfgSettings.WEBPAGE_TITLE;
 
             MfgGame.canvas = new MfgCanvas( MfgSettings.CANVAS_WIDTH, MfgSettings.CANVAS_HEIGHT );
             document.body.appendChild( MfgGame.canvas.getCanvasTag() );
@@ -30,7 +30,7 @@
                 testCounter++;
                 console.log("test: "+testCounter);
 
-            }, MfgSettings.GAME_SPEED);
+            }, MfgSettings.THREAD_DELAY);
 
 
 
