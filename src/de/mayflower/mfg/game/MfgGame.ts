@@ -25,23 +25,28 @@
 
             LibDrawing.fillRect(MfgGame.canvas.getContext(), MfgSettings.COLOR_PLAYER, 40, 80, 60, 150);
 
-            var testCounter:number=0;
-            setInterval(function(){
-                testCounter++;
-                console.log("test: "+testCounter);
 
+<<<<<<< Updated upstream
             }, MfgSettings.GAME_SPEED);
+=======
+            setInterval(MfgGame.tick,MfgSettings.gameSpeed);
+>>>>>>> Stashed changes
 
 
 
         }
+
+        private static tickCounter:number=0;
 
         /*****************************************************************************
         *   Inits the game engine.
         *****************************************************************************/
         public static tick():void
         {
-
+            this.tickCounter++;
+            console.log("test: "+this.tickCounter);
+            MfgGame.render();
+            MfgGame.draw();
 
         }
 
