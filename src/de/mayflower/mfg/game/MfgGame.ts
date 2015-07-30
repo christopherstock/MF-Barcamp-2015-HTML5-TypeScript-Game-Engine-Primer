@@ -25,5 +25,14 @@
 
             LibDrawing.fillRect(MfgGame.canvas.getContext(), MfgSettings.COLOR_PLAYER, 40, 80, 60, 150);
 
+            var testCounter:number=0;
+            setInterval(function(){
+                testCounter++;
+                console.log("test: "+testCounter);
+
+            },1000);
+
+
+
         }
     }
