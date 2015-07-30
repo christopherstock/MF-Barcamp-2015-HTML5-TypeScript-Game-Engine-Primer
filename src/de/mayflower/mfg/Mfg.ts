@@ -18,7 +18,7 @@
         *****************************************************************************/
         public static main():void
         {
-            MfgDebug.log("Error-Message");
+            MfgDebug.log( "Welcome to the HTML5 TypeScript Game Engine Primer." );
 
             MfgGame.init();
         }
