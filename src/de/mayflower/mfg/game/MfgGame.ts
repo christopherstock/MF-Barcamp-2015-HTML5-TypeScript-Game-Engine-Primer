@@ -71,10 +71,12 @@
         public static render():void
         {
             //move player
-            MfgGame.player.setX( MfgGame.player.getX() + 15 );
-            MfgGame.player.setY( MfgGame.player.getY() + 5 );
+            if ( LibKeySystem.isKeyPressed( MfgSettings.KEY_RIGHT ) ) MfgGame.player.setX( MfgGame.player.getX() + 5 );
+            if ( LibKeySystem.isKeyPressed( MfgSettings.KEY_LEFT  ) ) MfgGame.player.setX( MfgGame.player.getX() - 5 );
+            if ( LibKeySystem.isKeyPressed( MfgSettings.KEY_UP    ) ) MfgGame.player.setY( MfgGame.player.getY() - 5  );
+            if ( LibKeySystem.isKeyPressed( MfgSettings.KEY_DOWN  ) ) MfgGame.player.setY( MfgGame.player.getY() + 5 );
 
-            //if ( LibKeySystem.isKey )
+
 
 
             //clip level bounds
