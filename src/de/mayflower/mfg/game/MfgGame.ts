@@ -51,6 +51,9 @@
                 MfgGame.canvas.getContext().drawImage(imageZelda,0,0);
             };
 
+            //init key system
+            LibKeys.init( [ new ConsoleKeyLogger() ] );
+
             //start game loop
             setInterval( MfgGame.tick, MfgSettings.THREAD_DELAY );
         }
