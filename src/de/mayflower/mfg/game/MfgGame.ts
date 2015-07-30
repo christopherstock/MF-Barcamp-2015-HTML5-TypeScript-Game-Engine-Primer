@@ -31,16 +31,6 @@
             
             //create player instance
             MfgGame.player = new MfgPlayer( 40, 80, 60, 150 );
-            
-            //try drawing a rectangle
-            LibDrawing.fillRect(
-                MfgGame.canvas.getContext(),
-                MfgSettings.COLOR_PLAYER,
-                MfgGame.player.getX(),
-                MfgGame.player.getY(),
-                MfgGame.player.getWidth(),
-                MfgGame.player.getHeight()
-            );
 
             //try drawing an image
             var imageZelda=new Image();
