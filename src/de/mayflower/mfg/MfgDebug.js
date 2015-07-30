@@ -4,13 +4,15 @@
 *   @author     Christopher Stock
 *   @version    0.0.8
 *****************************************************************************/
-class MfgDebug
-{
+var MfgDebug = (function () {
+    function MfgDebug() {
+    }
     /**
      * @param string logMessage
      */
-    public static log(logMessage:string):void
-    {
+    MfgDebug.log = function (logMessage) {
         console.log(logMessage);
-    }
-}
+    };
+    return MfgDebug;
+})();
+//# sourceMappingURL=MfgDebug.js.map

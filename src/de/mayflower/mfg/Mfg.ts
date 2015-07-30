@@ -18,7 +18,7 @@
         *****************************************************************************/
         public static main():void
         {
-            console.log( "Mfg::main() being invoked!" );
+            MfgDebug.log("Error-Message");
 
             MfgGame.init();
         }
