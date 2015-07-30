@@ -16,4 +16,9 @@ class KeyValidator
     {
         return code === this.currentlyPressed;
     }
+
+    public getBareCode():number
+    {
+        return this.currentlyPressed;
+    }
 }

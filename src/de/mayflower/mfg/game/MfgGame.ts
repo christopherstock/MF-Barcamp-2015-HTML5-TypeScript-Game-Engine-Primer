@@ -17,8 +17,6 @@
          *****************************************************************************/
         public      static      player              :MfgPlayer                  = null;
 
-        private     static      tickCounter         :number                     = 0;
-
         /*****************************************************************************
         *   Inits the game engine.
         *****************************************************************************/
@@ -33,7 +31,7 @@
             
             //create player instance
             MfgGame.player = new MfgPlayer( 40, 80, 60, 150 );
-            
+
             //try drawing a rectangle
             LibDrawing.fillRect(
                 MfgGame.canvas.getContext(),
@@ -63,8 +61,6 @@
         *****************************************************************************/
         public static tick():void
         {
-            MfgGame.tickCounter++;
-            console.log( "test: " + MfgGame.tickCounter );
             MfgGame.render();
             MfgGame.draw( MfgGame.canvas.getContext() );
         }
@@ -76,10 +72,13 @@
         {
             var width = MfgGame.canvas.getWidth();
             var height = MfgGame.canvas.getHeight();
-            var nextX = MfgGame.player.getX()+2;
-            var nextY = MfgGame.player.getY()+1;
-            if(MfgGame.player.getWidth()+ nextX < width &&
-                MfgGame.player.getHeight()+ nextY < height) {
+            var nextX = MfgGame.player.getX() - 2;
+            var nextY = MfgGame.player.getY() - 1;
+
+            if(MfgGame.player.getWidth() + nextX < width
+                && MfgGame.player.getHeight() + nextY < height
+                && nextX > 0 && nextY > 0
+            ) {
                 MfgGame.player.setX(nextX);
                 MfgGame.player.setY(nextY);
             } else {
