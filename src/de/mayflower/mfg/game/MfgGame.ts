@@ -81,10 +81,13 @@
             ) {
                 MfgGame.player.setX(nextX);
                 MfgGame.player.setY(nextY);
-            } else {
+            }
+/*
+            else {
                 MfgGame.player.setX(0);
                 MfgGame.player.setY(0);
             }
+*/
         }
 
         /*****************************************************************************
