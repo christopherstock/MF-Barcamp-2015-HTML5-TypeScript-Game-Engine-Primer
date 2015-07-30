@@ -1,4 +1,7 @@
 /.idea
+*.js
+*.js.map
+
 node_modules
 /index.js
 /index.js.map
