@@ -15,7 +15,7 @@ class LibKeys
             for (var index in handlers) {
                 var handler = handlers[index];
 
-                LibKeys.keyVO.unpress(e.keyCode);
+                LibKeys.keyVO.unpress();
                 if (LibKeys.keyVO.assertIsPressed(e.keyCode)) {
                     return;
                 }
