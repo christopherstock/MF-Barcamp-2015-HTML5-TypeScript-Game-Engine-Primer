@@ -18,9 +18,9 @@
         *****************************************************************************/
         public static main():void
         {
-            alert( "Mfg::main() function being invoked." );
-
             console.log( "Mfg::main() being invoked!" );
+
+            MfgGame.init();
         }
     }
 
