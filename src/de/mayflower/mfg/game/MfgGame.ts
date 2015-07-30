@@ -73,6 +73,9 @@
         *****************************************************************************/
         public static render():void
         {
+            var player = MfgGame.player;
+
+            player.setY(player.getY() + 1);
 
 
         }
@@ -82,5 +85,18 @@
         *****************************************************************************/
         public static draw():void
         {
+            var canvasContext = MfgGame.canvas.getContext();
+            var player        = MfgGame.player;
+
+            MfgGame.canvas.getContext().clearRect(0, 0, canvasContext.canvas.width, canvasContext.canvas.height);
+
+            LibDrawing.fillRect(
+                MfgGame.canvas.getContext(),
+                MfgSettings.COLOR_PLAYER,
+                player.getX(),
+                player.getY(),
+                player.getWidth(),
+                player.getHeight()
+            );
         }
     }
