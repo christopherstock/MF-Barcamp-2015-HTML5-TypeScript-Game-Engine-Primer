@@ -23,7 +23,7 @@
             MfgGame.canvas = new MfgCanvas( MfgSettings.CANVAS_WIDTH, MfgSettings.CANVAS_HEIGHT );
             document.body.appendChild( MfgGame.canvas.getCanvasTag() );
 
-            Drawing.fillRect(MfgGame.canvas.getContext(), MfgSettings.COLOR_PLAYER, 10, 50, 30, 70);
+            LibDrawing.fillRect(MfgGame.canvas.getContext(), MfgSettings.COLOR_PLAYER, 40, 80, 60, 150);
 
         }
     }

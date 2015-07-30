@@ -17,3 +17,5 @@ node_modules
 /src/de/mayflower/mfg/MfgSettings.js.map
 
 *.map
+/src/de/mayflower/mfg/MfgDebug.js.map
+/src/de/mayflower/mfg/ui/MfgCanvas.js.map
