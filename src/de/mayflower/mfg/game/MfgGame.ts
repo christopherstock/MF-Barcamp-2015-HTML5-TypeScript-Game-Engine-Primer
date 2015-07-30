@@ -74,8 +74,18 @@
         *****************************************************************************/
         public static render():void
         {
-            MfgGame.player.setX( MfgGame.player.getX() + 2 );
-            MfgGame.player.setY( MfgGame.player.getY() + 1 );
+            var width = MfgGame.canvas.getWidth();
+            var height = MfgGame.canvas.getHeight();
+            var nextX = MfgGame.player.getX()+2;
+            var nextY = MfgGame.player.getY()+1;
+            if(MfgGame.player.getWidth()+ nextX < width &&
+                MfgGame.player.getHeight()+ nextY < height) {
+                MfgGame.player.setX(nextX);
+                MfgGame.player.setY(nextY);
+            } else {
+                MfgGame.player.setX(0);
+                MfgGame.player.setY(0);
+            }
         }
 
         /*****************************************************************************
