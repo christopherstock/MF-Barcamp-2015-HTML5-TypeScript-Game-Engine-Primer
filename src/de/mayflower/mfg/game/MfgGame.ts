@@ -26,6 +26,7 @@
             document.title = 'Mayflower Barcamp 2015 - HTML5 TypeScript Game Engine Primer';
 
             MfgGame.canvas = new MfgCanvas( MfgSettings.CANVAS_WIDTH, MfgSettings.CANVAS_HEIGHT );
+            MfgGame.player = new MfgPlayer( 40, 80, 60, 150 );
             document.body.appendChild( MfgGame.canvas.getCanvasTag() );
 
             LibDrawing.fillRect(
