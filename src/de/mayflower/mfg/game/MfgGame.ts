@@ -13,7 +13,7 @@
         public      static      canvas              :MfgCanvas                  = null;
 
         /*****************************************************************************
-         *   The canvas context.
+         *   The player object.
          *****************************************************************************/
         public      static      player              :MfgPlayer                  = null;
 
@@ -57,8 +57,8 @@
         *****************************************************************************/
         public static tick():void
         {
-            this.tickCounter++;
-            console.log("test: "+this.tickCounter);
+            MfgGame.tickCounter++;
+            console.log("test: "+MfgGame.tickCounter);
             MfgGame.render();
             MfgGame.draw();
 
