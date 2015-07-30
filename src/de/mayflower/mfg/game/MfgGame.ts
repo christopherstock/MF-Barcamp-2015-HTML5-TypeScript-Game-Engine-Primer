@@ -13,6 +13,13 @@
         public      static      canvas              :MfgCanvas                  = null;
 
         /*****************************************************************************
+         *   The player object.
+         *****************************************************************************/
+        public      static      player              :MfgPlayer                  = null;
+
+
+
+        /*****************************************************************************
         *   Inits the game engine.
         *****************************************************************************/
         public static init():void
@@ -21,27 +28,38 @@
             document.title = MfgSettings.WEBPAGE_TITLE;
 
             MfgGame.canvas = new MfgCanvas( MfgSettings.CANVAS_WIDTH, MfgSettings.CANVAS_HEIGHT );
+
+            MfgGame.player = new MfgPlayer( 40, 80, 60, 150 );
+
             document.body.appendChild( MfgGame.canvas.getCanvasTag() );
 
-            LibDrawing.fillRect(MfgGame.canvas.getContext(), MfgSettings.COLOR_PLAYER, 40, 80, 60, 150);
+            LibDrawing.fillRect(
+                MfgGame.canvas.getContext(),
+                MfgSettings.COLOR_PLAYER,
+                MfgGame.player.getX(),
+                MfgGame.player.getY(),
+                MfgGame.player.getWidth(),
+                MfgGame.player.getHeight()
+            );
+            
+            setInterval(MfgGame.tick,MfgSettings.THREAD_DELAY);
 
-            var testCounter:number=0;
-            setInterval(function(){
-                testCounter++;
-                console.log("test: "+testCounter);
-
-            }, MfgSettings.THREAD_DELAY);
 
 
 
         }
+
+        private static tickCounter:number=0;
 
         /*****************************************************************************
         *   Inits the game engine.
         *****************************************************************************/
         public static tick():void
         {
-
+            MfgGame.tickCounter++;
+            console.log("test: "+MfgGame.tickCounter);
+            MfgGame.render();
+            MfgGame.draw();
 
         }
 
