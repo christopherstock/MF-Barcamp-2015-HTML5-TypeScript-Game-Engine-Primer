@@ -32,6 +32,16 @@
             //create player instance
             MfgGame.player = new MfgPlayer( 40, 80, 60, 150 );
 
+            //try drawing a rectangle
+            LibDrawing.fillRect(
+                MfgGame.canvas.getContext(),
+                MfgSettings.COLOR_PLAYER,
+                MfgGame.player.getX(),
+                MfgGame.player.getY(),
+                MfgGame.player.getWidth(),
+                MfgGame.player.getHeight()
+            );
+
             //try drawing an image
             var imageZelda=new Image();
             imageZelda.src = "res/image/player1.png";
@@ -60,8 +70,21 @@
         *****************************************************************************/
         public static render():void
         {
-            MfgGame.player.setX( MfgGame.player.getX() + 2 );
-            MfgGame.player.setY( MfgGame.player.getY() + 1 );
+            var width = MfgGame.canvas.getWidth();
+            var height = MfgGame.canvas.getHeight();
+            var nextX = MfgGame.player.getX() - 2;
+            var nextY = MfgGame.player.getY() - 1;
+
+            if(MfgGame.player.getWidth() + nextX < width
+                && MfgGame.player.getHeight() + nextY < height
+                && nextX > 0 && nextY > 0
+            ) {
+                MfgGame.player.setX(nextX);
+                MfgGame.player.setY(nextY);
+            } else {
+                MfgGame.player.setX(0);
+                MfgGame.player.setY(0);
+            }
         }
 
         /*****************************************************************************
