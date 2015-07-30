@@ -1,5 +1,7 @@
 class LibKeys
 {
+    public static keyVO:KeyValidator;
+
     /**
      * Init handlers
      *
@@ -7,14 +9,14 @@ class LibKeys
      */
     public static init(handlers:Array<KeyEventHandler> = [])
     {
-        var observer = new KeyValidator();
+        LibKeys.keyVO = new KeyValidator();
 
         window.onkeyup = function (e) {
             for (var index in handlers) {
                 var handler = handlers[index];
 
-                observer.unpress(e.keyCode);
-                if (observer.assertIsPressed(e.keyCode)) {
+                LibKeys.keyVO.unpress(e.keyCode);
+                if (LibKeys.keyVO.assertIsPressed(e.keyCode)) {
                     return;
                 }
 
@@ -26,13 +28,22 @@ class LibKeys
             for (var index in handlers) {
                 var handler = handlers[index];
 
-                if (observer.assertIsPressed(e.keyCode)) {
+                if (LibKeys.keyVO.assertIsPressed(e.keyCode)) {
                     return;
                 }
 
-                observer.press(e.keyCode);
+                LibKeys.keyVO.press(e.keyCode);
                 handler.onKeyDown(e.keyCode);
             }
         };
+    }
+
+    public static getCurrentKey():Key
+    {
+        if (null === this.keyVO) {
+            throw new Error('Please call init() first!');
+        }
+
+        return new Key(this.keyVO.getBareCode());
     }
 }
