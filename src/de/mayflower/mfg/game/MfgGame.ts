@@ -63,8 +63,7 @@
             MfgGame.tickCounter++;
             console.log( "test: " + MfgGame.tickCounter );
             MfgGame.render();
-            MfgGame.draw();
-
+            MfgGame.draw( MfgGame.canvas.getContext() );
         }
 
         /*****************************************************************************
@@ -72,6 +71,9 @@
         *****************************************************************************/
         public static render():void
         {
+            var player = MfgGame.player;
+
+            player.setY(player.getY() + 1);
 
 
         }
@@ -79,7 +81,17 @@
         /*****************************************************************************
         *   Specifies all drawing operations.
         *****************************************************************************/
-        public static draw():void
+        public static draw( ctx:CanvasRenderingContext2D ):void
         {
+            LibDrawing.fillRect( ctx, MfgSettings.COLOR_BG, 0, 0, MfgGame.canvas.getWidth(), MfgGame.canvas.getHeight() );
+
+            LibDrawing.fillRect(
+                MfgGame.canvas.getContext(),
+                MfgSettings.COLOR_PLAYER,
+                MfgGame.player.getX(),
+                MfgGame.player.getY(),
+                MfgGame.player.getWidth(),
+                MfgGame.player.getHeight()
+            );
         }
     }
