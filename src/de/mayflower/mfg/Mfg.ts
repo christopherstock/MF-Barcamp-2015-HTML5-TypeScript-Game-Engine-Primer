@@ -21,6 +21,8 @@
             alert( "Mfg::main() function being invoked." );
 
             console.log( "Mfg::main() being invoked!" );
+
+            MfgDebug.log("Error-Message");
         }
     }
 
