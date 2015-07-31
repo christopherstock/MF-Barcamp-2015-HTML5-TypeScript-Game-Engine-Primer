@@ -77,6 +77,11 @@
         *****************************************************************************/
         public static render():void
         {
+            //render all sprites
+            MfgSprite.ITEM_MF_LOGO.nextTick();
+            MfgSprite.PLAYER_WALK_LEFT.nextTick();
+            MfgSprite.PLAYER_WALK_RIGHT.nextTick();
+
             //move player
             if ( LibKeySystem.isKeyPressed( MfgSettings.KEY_RIGHT ) ) MfgGame.player.setX( MfgGame.player.getX() + MfgSettings.PLAYER_SPEED );
             if ( LibKeySystem.isKeyPressed( MfgSettings.KEY_LEFT  ) ) MfgGame.player.setX( MfgGame.player.getX() - MfgSettings.PLAYER_SPEED );
@@ -94,11 +99,6 @@
             {
                 MfgGame.items[ i ].render();
             }
-
-            //render all sprites
-            MfgSprite.ITEM_MF_LOGO.nextTick();
-            MfgSprite.PLAYER_WALK_LEFT.nextTick();
-            MfgSprite.PLAYER_WALK_RIGHT.nextTick();
         }
 
         /*****************************************************************************
