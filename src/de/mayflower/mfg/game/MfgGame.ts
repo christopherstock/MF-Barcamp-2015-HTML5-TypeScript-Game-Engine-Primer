@@ -86,6 +86,16 @@
                 MfgGame.canvas.getHeight()
             );
 
+            //draw the level
+            LibDrawing.fillRect(
+                ctx,
+                MfgSettings.LEVEL_COLOR,
+                0,
+                0,
+                MfgSettings.LEVEL_WIDTH,
+                MfgSettings.LEVEL_HEIGHT
+            );
+
             //draw the player
             LibDrawing.fillRect(
                 MfgGame.canvas.getContext(),
