@@ -69,18 +69,55 @@
         {
             var itemList = new Array<MfgItem>();
 
-            for(var listIndex:number = 0; listIndex < MfgSettings.ITEM_COUNT; listIndex++) {
-                var newX   = LibMath.generateRandomNumber(0, MfgSettings.LEVEL_WIDTH);
-                var newY   = LibMath.generateRandomNumber(0, MfgSettings.LEVEL_HEIGHT);
+            var iBreakCounter = 0;
+
+            while(true) {
+                var newX   = LibMath.generateRandomNumber(0, MfgSettings.LEVEL_WIDTH - MfgSettings.ITEM_WIDTH);
+                var newY   = LibMath.generateRandomNumber(0, MfgSettings.LEVEL_HEIGHT - MfgSettings.ITEM_HEIGHT);
                 var points = LibMath.generateRandomNumber(
                     MfgSettings.MIN_ITEM_POINS,
                     MfgSettings.MAX_ITEM_POINS
                 );
 
-                itemList.push(new MfgItem(newX, newY, points));
-            }
+                var newItem = new MfgItem(newX, newY, points);
 
-            return itemList;
+                if (itemList.length == 0) {
+                    itemList.push(newItem);
+                } else {
+                    var newItemOverlaps = false;
+
+                    for(var i:number = 0; i < itemList.length; i++) {
+                        newItemOverlaps = newItem.doesItemOverlap(itemList[i]);
+                    }
+                    
+                    if (!newItemOverlaps) {
+                        itemList.push(newItem);
+                    }
+                }
+
+                if (itemList.length == MfgSettings.ITEM_COUNT) {
+                    return itemList;
+                }
+
+                iBreakCounter ++;
+
+                if (iBreakCounter == 1000) {
+                    return itemList;
+                }
+            }
+        }
+
+        /**
+         * @param item
+         */
+        public doesItemOverlap(item:MfgItem):boolean
+        {
+            return !(
+                   item.getX()                           > this.x + MfgSettings.ITEM_HEIGHT
+                || item.getX() + MfgSettings.ITEM_HEIGHT < this.x
+                || item.getY()                           > this.y + MfgSettings.ITEM_WIDTH
+                || item.getY() + MfgSettings.ITEM_WIDTH  < this.y
+            );
         }
 
         /**
