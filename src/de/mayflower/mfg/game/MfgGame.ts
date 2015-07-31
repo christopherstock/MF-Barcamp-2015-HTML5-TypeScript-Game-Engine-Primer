@@ -94,6 +94,6 @@
             );
 
             // draw image
-            ctx.drawImage(MfgImage.getImage(), MfgGame.player.getX(), MfgGame.player.getY());
+            LibDrawing.drawImage(ctx, MfgImage.getImage(), MfgGame.player.getX(), MfgGame.player.getY());
         }
     }
