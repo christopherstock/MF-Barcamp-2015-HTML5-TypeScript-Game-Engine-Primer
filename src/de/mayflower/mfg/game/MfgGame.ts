@@ -33,6 +33,9 @@
 
         private static initRest():void
         {
+            //create player instance
+            MfgGame.player = new MfgPlayer( MfgSettings.PLAYER_START_X, MfgSettings.PLAYER_START_Y , MfgImage.getImage().width, MfgImage.getImage().height);
+
             //init key system
             LibKeySystem.init();
 
