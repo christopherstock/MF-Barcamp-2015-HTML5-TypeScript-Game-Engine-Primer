@@ -78,6 +78,19 @@
             if ( MfgGame.player.getY() >= MfgSettings.LEVEL_HEIGHT - MfgGame.player.getHeight() ) MfgGame.player.setY( MfgSettings.LEVEL_HEIGHT - MfgGame.player.getHeight() );
             if ( MfgGame.player.getX() < 0 ) MfgGame.player.setX( 0 );
             if ( MfgGame.player.getY() < 0 ) MfgGame.player.setY( 0 );
+
+            for(var itemIndex:number = 0; itemIndex < MfgGame.items.length; itemIndex++) {
+                var currentItem = MfgGame.items[itemIndex];
+
+                if (currentItem.getPickedUp()) {
+                    currentItem.fadeOut();
+                    continue;
+                }
+
+                if (currentItem.collidesWithPlayer(MfgGame.player)) {
+                    currentItem.setPickedUp(true);
+                }
+            }
         }
 
         /*****************************************************************************
@@ -115,26 +128,7 @@
             //draw player image
             LibDrawing.drawImage(ctx, MfgImage.getImage(MfgImage.PLAYER1_LEFT), MfgGame.player.getX(), MfgGame.player.getY());
 
-            //draw items
-            MfgGame.drawItems(ctx);
-        }
-
-        /**
-         * @param ctx
-         */
-        public static drawItems(ctx:CanvasRenderingContext2D):void
-        {
-            for ( var i:number = 0; i < MfgGame.items.length; ++i )
-            {
-                //draw the player
-                LibDrawing.fillRect(
-                    ctx,
-                    MfgSettings.COLOR_PLAYER,
-                    MfgGame.items[ i ].getX(),
-                    MfgGame.items[ i ].getY(),
-                    MfgSettings.ITEM_WIDTH,
-                    MfgSettings.ITEM_HEIGHT
-                );
-            }
+            //draw all items
+            MfgItem.drawAll(ctx);
         }
     }

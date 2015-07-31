@@ -21,7 +21,7 @@
         /** Level border color */
         public          static          COLOR_BORDER_LEVEL      :string             = "rgba( 255, 255, 0,   1.0 )";
         /** The color of a collectable item. */
-        public          static          COLOR_ITEM              :string             = "rgba( 0,   255, 0,   1.0 )";
+        public          static          COLOR_ITEM              :string             = "rgba( 255, 127, 0,   1.0 )";
 
 
         /** The delay of the game. The less this variable is set the faster runs the game. */

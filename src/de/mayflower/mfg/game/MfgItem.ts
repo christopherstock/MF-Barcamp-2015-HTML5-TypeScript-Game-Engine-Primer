@@ -12,6 +12,10 @@ class MfgItem
     private            y               :number             = 0;
     /** Points gained by player if collected */
     private            points          :number             = 0;
+    /** Flag, which indicates if item is picked up by player */
+    private            pickedUp        :boolean            = false;
+    /** Current alpha-color-value of item */
+    private            alpha           :number             = 1;
 
     /**
      * @param x
@@ -42,6 +46,38 @@ class MfgItem
     }
 
     /**
+     * @return {boolean}
+     */
+    public getPickedUp():boolean
+    {
+        return this.pickedUp;
+    }
+
+    /**
+     * @param pickedUp
+     */
+    public setPickedUp(pickedUp:boolean)
+    {
+        this.pickedUp = pickedUp;
+    }
+
+    /**
+     * @return {number}
+     */
+    public getAlpha():number
+    {
+        return this.alpha;
+    }
+
+    /**
+     * @param alpha
+     */
+    public setAlpha(alpha:number)
+    {
+        this.alpha = alpha;
+    }
+
+    /**
      * @return {MfgItem[]}
      */
     public static generateRandomItems():Array<MfgItem>
@@ -49,8 +85,8 @@ class MfgItem
         var itemList = new Array<MfgItem>();
 
         for(var listIndex:number = 0; listIndex < MfgSettings.ITEM_COUNT; listIndex++) {
-            var newX   = LibMath.generateRandomNumber(0, MfgGame.canvas.getWidth());
-            var newY   = LibMath.generateRandomNumber(0, MfgGame.canvas.getHeight());
+            var newX   = LibMath.generateRandomNumber(0, MfgSettings.LEVEL_WIDTH);
+            var newY   = LibMath.generateRandomNumber(0, MfgSettings.LEVEL_HEIGHT);
             var points = LibMath.generateRandomNumber(
                 MfgSettings.MIN_ITEM_POINS,
                 MfgSettings.MAX_ITEM_POINS
@@ -63,21 +99,56 @@ class MfgItem
     }
 
     /**
-     * Checks of given item collides with instance-item
+     * Checks of player collides with item
      *
-     * @param item
+     * @param player
      * @return {boolean}
      */
-    public collidesWithItem(item:MfgItem):boolean
+    public collidesWithPlayer(player:MfgPlayer):boolean
     {
-        if (item.getX() >= this.x || item.getX() <= (this.x + MfgSettings.ITEM_WIDTH)) {
-            return true;
-        }
-
-        if (item.getY() >= this.y || item.getY() <= (this.y + MfgSettings.ITEM_HEIGHT)) {
+        if (this.x <= player.getX() + player.getWidth() && this.x >= player.getX()
+        && this.y <= player.getY() + player.getHeight() && this.y >= player.getY()
+        ) {
             return true;
         }
 
         return false;
+    }
+
+    /**
+     * Changes the alpha-color-value
+     */
+    public fadeOut()
+    {
+        if (this.alpha == 0) {
+            return;
+        }
+
+        if (this.alpha > 0) {
+            this.alpha --;
+        }
+    }
+
+    /**
+     * @param ctx
+     */
+    public static drawAll(ctx:CanvasRenderingContext2D)
+    {
+        for ( var i:number = 0; i < MfgGame.items.length; ++i )
+        {
+            if (MfgGame.items[i].getAlpha() == 0) {
+                continue;
+            }
+
+            //draw the player
+            LibDrawing.fillRect(
+                ctx,
+                MfgSettings.COLOR_PLAYER,
+                MfgGame.items[ i ].getX(),
+                MfgGame.items[ i ].getY(),
+                MfgSettings.ITEM_WIDTH,
+                MfgSettings.ITEM_HEIGHT
+            );
+        }
     }
 }
