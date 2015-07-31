@@ -8,10 +8,12 @@
     class MfgSound
     {
         public      static      PICK_UP                 :string                     = "res/sound/pickUp.mp3";
+        public      static      BG_ENCHANTED_WOODS      :string                     = "res/sound/bgEnchantedWoods.mp3";
 
         private     static      FILENAMES               :Array<string>              =
         [
             MfgSound.PICK_UP,
+            MfgSound.BG_ENCHANTED_WOODS,
         ];
 
         /** This array contains all loaded sounds. */

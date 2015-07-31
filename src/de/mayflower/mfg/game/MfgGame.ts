@@ -59,6 +59,9 @@
             //init key system
             LibKeySystem.init();
 
+            //start the bg sound
+            MfgSound.playSound( MfgSound.BG_ENCHANTED_WOODS );
+
             //start game loop
             setInterval( MfgGame.tick, MfgSettings.THREAD_DELAY );
         }
@@ -117,6 +120,9 @@
             {
                 MfgGame.items[ i ].render();
             }
+
+            //render camera
+            MfgCamera.update();
         }
 
         /*****************************************************************************

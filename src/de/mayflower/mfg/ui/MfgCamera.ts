@@ -12,4 +12,18 @@
 
         /** The scrolling offset Y. */
         public          static          offsetY         :number                         = 0;
+
+        /*****************************************************************************
+        *   Renders the camera for this tick.
+        *****************************************************************************/
+        public static update()
+        {
+
+
+            //MfgCamera.offsetX = MfgGame.player.getX();
+            //MfgCamera.offsetY = MfgGame.player.getY();
+
+
+
+        }
     }
