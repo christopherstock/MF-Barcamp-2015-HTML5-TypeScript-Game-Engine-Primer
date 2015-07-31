@@ -65,8 +65,8 @@
 
 
             //clip level bounds
-            if ( MfgGame.player.getX() >= MfgGame.canvas.getWidth()  - MfgGame.player.getWidth()  ) MfgGame.player.setX( MfgGame.canvas.getWidth()  - MfgGame.player.getWidth()  );
-            if ( MfgGame.player.getY() >= MfgGame.canvas.getHeight() - MfgGame.player.getHeight() ) MfgGame.player.setY( MfgGame.canvas.getHeight() - MfgGame.player.getHeight() );
+            if ( MfgGame.player.getX() >= MfgSettings.LEVEL_WIDTH  - MfgGame.player.getWidth()  ) MfgGame.player.setX( MfgSettings.LEVEL_WIDTH  - MfgGame.player.getWidth()  );
+            if ( MfgGame.player.getY() >= MfgSettings.LEVEL_HEIGHT - MfgGame.player.getHeight() ) MfgGame.player.setY( MfgSettings.LEVEL_HEIGHT - MfgGame.player.getHeight() );
             if ( MfgGame.player.getX() < 0 ) MfgGame.player.setX( 0 );
             if ( MfgGame.player.getY() < 0 ) MfgGame.player.setY( 0 );
         }
