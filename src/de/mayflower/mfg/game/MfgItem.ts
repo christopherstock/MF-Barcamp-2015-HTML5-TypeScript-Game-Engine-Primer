@@ -88,6 +88,7 @@
 
                     for(var i:number = 0; i < itemList.length; i++) {
                         newItemOverlaps = newItem.doesItemOverlap(itemList[i]);
+                        if ( newItemOverlaps ) break;
                     }
                     
                     if (!newItemOverlaps) {
@@ -112,12 +113,21 @@
          */
         public doesItemOverlap(item:MfgItem):boolean
         {
+            return (
+                    item.x + MfgSettings.ITEM_WIDTH  >= this.x
+                &&  item.y + MfgSettings.ITEM_HEIGHT >= this.y
+                &&  item.x                           <= this.x + MfgSettings.ITEM_WIDTH
+                &&  item.y                           <= this.y + MfgSettings.ITEM_HEIGHT
+            );
+/*
             return !(
                    item.getX()                           > this.x + MfgSettings.ITEM_HEIGHT
                 || item.getX() + MfgSettings.ITEM_HEIGHT < this.x
                 || item.getY()                           > this.y + MfgSettings.ITEM_WIDTH
                 || item.getY() + MfgSettings.ITEM_WIDTH  < this.y
             );
+*/
+
         }
 
         /**
