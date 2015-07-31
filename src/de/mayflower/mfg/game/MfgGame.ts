@@ -92,5 +92,8 @@
                 MfgGame.player.getWidth(),
                 MfgGame.player.getHeight()
             );
+
+            // draw image
+            ctx.drawImage(MfgImage.getImage(), MfgGame.player.getX(), MfgGame.player.getY());
         }
     }
