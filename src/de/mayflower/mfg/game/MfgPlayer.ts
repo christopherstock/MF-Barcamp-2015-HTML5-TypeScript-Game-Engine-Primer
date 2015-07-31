@@ -156,6 +156,6 @@
         public setNewSprite( sprite:MfgSprite )
         {
             this.sprite = sprite;
-            this.sprite.reset();
+            //this.sprite.reset();
         }
     }
