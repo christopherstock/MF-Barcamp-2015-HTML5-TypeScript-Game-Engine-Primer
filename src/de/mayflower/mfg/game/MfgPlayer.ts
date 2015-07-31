@@ -20,6 +20,10 @@
         /** Current player sprite. */
         private     sprite          :MfgSprite          = null;
 
+        /** Lookingdirection-Left = 1; LookingdirectionRight = 0 */
+        public     lookingdirection:number             = 0;
+
+
         /*****************************************************************************
         *   Creates a player instance.
         *
@@ -158,4 +162,5 @@
             this.sprite = sprite;
             //this.sprite.reset();
         }
+
     }
