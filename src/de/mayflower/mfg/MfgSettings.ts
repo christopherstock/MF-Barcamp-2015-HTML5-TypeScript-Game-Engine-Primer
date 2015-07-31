@@ -37,5 +37,6 @@
         public          static          PLAYER_SPEED             :number            =  5;
         /** Player start position. */
         public          static          PLAYER_START_X           :number            = 40;
+        /** Player start position. */
         public          static          PLAYER_START_Y           :number            = 80;
     }
