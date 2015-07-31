@@ -17,7 +17,7 @@ class MfgImage
         var src:string = "res/image/player1.png";
 
         //try drawing an imageheight
-        MfgImage.player1 = new HTMLImageElement();
+        MfgImage.player1 = new Image();
         MfgImage.player1.src = src;
         MfgImage.player1.onload = function(){
             callback();
