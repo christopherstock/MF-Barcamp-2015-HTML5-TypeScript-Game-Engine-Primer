@@ -46,6 +46,7 @@
             //create player instance
             MfgGame.player = new MfgPlayer
             (
+                MfgSprite.PLAYER_STAND_RIGHT,
                 MfgSettings.PLAYER_START_X,
                 MfgSettings.PLAYER_START_Y,
                 MfgSprite.PLAYER_WALK_LEFT.iFrameWidth,

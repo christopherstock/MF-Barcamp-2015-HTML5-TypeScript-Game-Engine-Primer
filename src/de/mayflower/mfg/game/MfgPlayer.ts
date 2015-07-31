@@ -17,17 +17,21 @@
         private     height          :number             = 0;
         /** Current point count. */
         private     points          :number             = 0;
+        /** Current player sprite. */
+        private     sprite          :MfgSprite          = null;
 
         /*****************************************************************************
         *   Creates a player instance.
         *
+        *   @param  sprite  The initial player sprite.
         *   @param  x       Location X.
         *   @param  y       Location Y.
         *   @param  width   Player width.
         *   @param  height  Player height.
         *****************************************************************************/
-        constructor( x:number, y:number, width:number, height:number )
+        constructor( sprite:MfgSprite, x:number, y:number, width:number, height:number )
         {
+            this.sprite = sprite;
             this.x      = x;
             this.y      = y;
             this.width  = width;
@@ -140,7 +144,7 @@
             }
 
             //draw player sprite
-            MfgSprite.PLAYER_STAND_RIGHT.draw
+            MfgGame.player.sprite.draw
             (
                 ctx,
                 MfgGame.player.getX(),
