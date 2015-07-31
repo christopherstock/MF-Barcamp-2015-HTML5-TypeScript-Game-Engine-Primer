@@ -104,15 +104,14 @@ class MfgItem
      * @param player
      * @return {boolean}
      */
-    public collidesWithPlayer(player:MfgPlayer):boolean
+    public collidesWithPlayer( player:MfgPlayer ):boolean
     {
-        if (this.x <= player.getX() + player.getWidth() && this.x >= player.getX()
-        && this.y <= player.getY() + player.getHeight() && this.y >= player.getY()
-        ) {
-            return true;
-        }
-
-        return false;
+        return (
+                player.getX() + player.getWidth()  >= this.x
+            &&  player.getY() + player.getHeight() >= this.y
+            &&  player.getX()                      <= this.x + MfgSettings.ITEM_WIDTH
+            &&  player.getY()                      <= this.y + MfgSettings.ITEM_HEIGHT
+        );
     }
 
     /**
@@ -140,10 +139,9 @@ class MfgItem
                 continue;
             }
 
-            //draw the player
             LibDrawing.fillRect(
                 ctx,
-                MfgSettings.COLOR_PLAYER,
+                MfgSettings.COLOR_ITEM,
                 MfgGame.items[ i ].getX(),
                 MfgGame.items[ i ].getY(),
                 MfgSettings.ITEM_WIDTH,

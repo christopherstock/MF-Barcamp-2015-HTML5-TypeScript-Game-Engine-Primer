@@ -61,7 +61,7 @@
         /** Maximum numbers of collectable items */
         public          static          ITEM_COUNT              :number             = 10;
         /** Item's width. */
-        public          static          ITEM_WIDTH              :number             = 10;
+        public          static          ITEM_WIDTH              :number             = 100;
         /** Item's height. */
-        public          static          ITEM_HEIGHT             :number             = 10;
+        public          static          ITEM_HEIGHT             :number             = 100;
     }

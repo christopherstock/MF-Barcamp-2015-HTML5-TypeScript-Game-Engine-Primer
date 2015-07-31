@@ -9,8 +9,8 @@
     {
         public  static  PLAYER1_LEFT            :string                 = "res/image/standLeft.png";
         public  static  PLAYER1_RIGHT           :string                 = "res/image/standRight.png";
-        public  static  PLAYER1_WALK_LEFT        :string                 = "res/image/walkLeft.png";
-        public  static  PLAYER1_WALK_RIGHT       :string                 = "res/image/walkRight.png";
+        public  static  PLAYER1_WALK_LEFT       :string                 = "res/image/walkLeft.png";
+        public  static  PLAYER1_WALK_RIGHT      :string                 = "res/image/walkRight.png";
 
         private static  FILENAMES               :Array<string>          =
         [
