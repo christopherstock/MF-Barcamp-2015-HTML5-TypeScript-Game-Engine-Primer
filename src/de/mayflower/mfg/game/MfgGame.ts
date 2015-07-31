@@ -32,7 +32,7 @@
             MfgGame.player = new MfgPlayer( MfgSettings.PLAYER_START_X, MfgSettings.PLAYER_START_Y , 60, 150 );
 
             //load all images
-            MfgImage.loadImage(MfgGame.initRest);
+            MfgImage.loadImages(MfgGame.initRest);
         }
 
         /*****************************************************************************
@@ -41,7 +41,7 @@
         private static initRest():void
         {
             //create player instance
-            MfgGame.player = new MfgPlayer( MfgSettings.PLAYER_START_X, MfgSettings.PLAYER_START_Y , MfgImage.getImage().width, MfgImage.getImage().height);
+            MfgGame.player = new MfgPlayer( MfgSettings.PLAYER_START_X, MfgSettings.PLAYER_START_Y , MfgImage.getImage(MfgImage.PLAYER1_LEFT).width, MfgImage.getImage(MfgImage.PLAYER1_LEFT).height);
 
             //create all items
             MfgGame.items  = MfgItem.generateRandomItems();
@@ -102,7 +102,7 @@
             LibDrawing.fillRect( ctx, MfgSettings.COLOR_BORDER_LEVEL, 0, 0, MfgSettings.LEVEL_BORDER_SIZE, MfgSettings.LEVEL_HEIGHT );
             LibDrawing.fillRect( ctx, MfgSettings.COLOR_BORDER_LEVEL, MfgSettings.LEVEL_WIDTH - MfgSettings.LEVEL_BORDER_SIZE, 0, MfgSettings.LEVEL_BORDER_SIZE, MfgSettings.LEVEL_HEIGHT );
 
-            //draw the player
+            //draw player rect
             LibDrawing.fillRect(
                 MfgGame.canvas.getContext(),
                 MfgSettings.COLOR_PLAYER,
@@ -112,9 +112,10 @@
                 MfgGame.player.getHeight()
             );
 
-            // draw image
-            LibDrawing.drawImage(ctx, MfgImage.getImage(), MfgGame.player.getX(), MfgGame.player.getY());
+            //draw player image
+            LibDrawing.drawImage(ctx, MfgImage.getImage(MfgImage.PLAYER1_LEFT), MfgGame.player.getX(), MfgGame.player.getY());
 
+            //draw items
             MfgGame.drawItems(ctx);
         }
 

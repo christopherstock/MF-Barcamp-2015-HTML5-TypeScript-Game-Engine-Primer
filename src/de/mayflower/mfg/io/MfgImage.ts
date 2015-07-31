@@ -1,26 +1,37 @@
 class MfgImage
 {
-    public static PLAYER1_LEFT = "standLeft.png";
-    public static PLAYER1_RIGHT = "standRight.png";
-    public static PLAYER1_WALKLEFT = "walkLeft.png";
-    public static PLAYER1_WALKRIGHT = "walkRight.png";
+    public static PLAYER1_LEFT:string = "standLeft.png";
+    public static PLAYER1_RIGHT:string = "standRight.png";
+    public static PLAYER1_WALKLEFT:string = "walkLeft.png";
+    public static PLAYER1_WALKRIGHT:string = "walkRight.png";
 
-    private static player1:HTMLImageElement = null;
+    private static CONST_LIST:Array<string> = [MfgImage.PLAYER1_LEFT, MfgImage.PLAYER1_RIGHT, MfgImage.PLAYER1_WALKLEFT, MfgImage.PLAYER1_WALKRIGHT];
+    private static imglist:Array<string> = new Array<string>();
 
-    public static getImage():HTMLImageElement
+    private static callback:any = null;
+    private static imgCount:number = 0;
+
+    public static getImage(key:string):HTMLImageElement
     {
-        return MfgImage.player1;
+        return MfgImage.imglist[key];
     }
 
-    public static loadImage(callback:any):void
+    public static loadImages(callback:any):void
     {
-        var src:string = "res/image/player1.png";
+        MfgImage.callback = callback;
 
-        //try drawing an imageheight
-        MfgImage.player1 = new Image();
-        MfgImage.player1.src = src;
-        MfgImage.player1.onload = function(){
-            callback();
-        };
+
+
+        for (var i = 0; i < MfgImage.CONST_LIST.length; i++)
+        {
+            MfgImage.imglist[MfgImage.CONST_LIST[i]] = new Image();
+            MfgImage.imglist[MfgImage.CONST_LIST[i]].src = "res/image/" + MfgImage.CONST_LIST[i];
+            MfgImage.imglist[MfgImage.CONST_LIST[i]].onload = MfgImage.onLoadImage;
+        }
+    }
+
+    private static onLoadImage():void
+    {
+        if (++MfgImage.imgCount == MfgImage.CONST_LIST.length) MfgImage.callback();
     }
 }
