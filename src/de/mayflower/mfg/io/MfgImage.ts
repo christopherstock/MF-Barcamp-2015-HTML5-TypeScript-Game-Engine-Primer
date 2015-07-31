@@ -1,37 +1,51 @@
-class MfgImage
-{
-    public static PLAYER1_LEFT:string = "standLeft.png";
-    public static PLAYER1_RIGHT:string = "standRight.png";
-    public static PLAYER1_WALKLEFT:string = "walkLeft.png";
-    public static PLAYER1_WALKRIGHT:string = "walkRight.png";
 
-    private static CONST_LIST:Array<string> = [MfgImage.PLAYER1_LEFT, MfgImage.PLAYER1_RIGHT, MfgImage.PLAYER1_WALKLEFT, MfgImage.PLAYER1_WALKRIGHT];
-    private static imglist:Array<string> = new Array<string>();
-
-    private static callback:any = null;
-    private static imgCount:number = 0;
-
-    public static getImage(key:string):HTMLImageElement
+    /*****************************************************************************
+    *   Represents the image system.
+    *
+    *   @author     Jeremy Gauchel
+    *   @version    0.0.1
+    *****************************************************************************/
+    class MfgImage
     {
-        return MfgImage.imglist[key];
-    }
+        public  static  PLAYER1_LEFT            :string                 = "res/image/standLeft.png";
+        public  static  PLAYER1_RIGHT           :string                 = "res/image/standRight.png";
+        public  static  PLAYER1_WALK_LEFT        :string                 = "res/image/walkLeft.png";
+        public  static  PLAYER1_WALK_RIGHT       :string                 = "res/image/walkRight.png";
 
-    public static loadImages(callback:any):void
-    {
-        MfgImage.callback = callback;
+        private static  FILENAMES               :Array<string>          =
+        [
+            MfgImage.PLAYER1_LEFT,
+            MfgImage.PLAYER1_RIGHT,
+            MfgImage.PLAYER1_WALK_LEFT,
+            MfgImage.PLAYER1_WALK_RIGHT
+        ];
 
+        private static  images                  :Array<string>          = new Array<string>();
+        private static  callback                :any                    = null;
+        private static  imgCount                :number                 = 0;
 
-
-        for (var i = 0; i < MfgImage.CONST_LIST.length; i++)
+        public static getImage( key:string ):HTMLImageElement
         {
-            MfgImage.imglist[MfgImage.CONST_LIST[i]] = new Image();
-            MfgImage.imglist[MfgImage.CONST_LIST[i]].src = "res/image/" + MfgImage.CONST_LIST[i];
-            MfgImage.imglist[MfgImage.CONST_LIST[i]].onload = MfgImage.onLoadImage;
+            return MfgImage.images[ key ];
+        }
+
+        public static loadImages( callback:any ):void
+        {
+            MfgImage.callback = callback;
+
+            for ( var i = 0; i < MfgImage.FILENAMES.length; i++ )
+            {
+                MfgImage.images[ MfgImage.FILENAMES[ i ] ]        = new Image();
+                MfgImage.images[ MfgImage.FILENAMES[ i ] ].src    = MfgImage.FILENAMES[ i ];
+                MfgImage.images[ MfgImage.FILENAMES[ i ] ].onload = MfgImage.onLoadImage;
+            }
+        }
+
+        private static onLoadImage():void
+        {
+            if ( ++MfgImage.imgCount == MfgImage.FILENAMES.length )
+            {
+                MfgImage.callback();
+            }
         }
     }
-
-    private static onLoadImage():void
-    {
-        if (++MfgImage.imgCount == MfgImage.CONST_LIST.length) MfgImage.callback();
-    }
-}
