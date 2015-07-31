@@ -89,7 +89,7 @@
             //draw the level
             LibDrawing.fillRect(
                 ctx,
-                MfgSettings.LEVEL_COLOR,
+                MfgSettings.COLOR_BACKGROUND_LEVEL,
                 0,
                 0,
                 MfgSettings.LEVEL_WIDTH,

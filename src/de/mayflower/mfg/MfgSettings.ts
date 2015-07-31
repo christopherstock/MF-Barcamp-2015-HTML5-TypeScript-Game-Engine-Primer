@@ -45,7 +45,7 @@
         public          static          LEVEL_WIDTH             :number            = 400;
         /** Level height. */
         public          static          LEVEL_HEIGHT            :number            = 250;
-        /**Level color */
-        public          static          LEVEL_COLOR             :string            = "rgba( 0, 255, 128, 1.0 )";
+        /**Level background color */
+        public          static          COLOR_BACKGROUND_LEVEL  :string            = "rgba( 0, 255, 128, 1.0 )";
 
     }
