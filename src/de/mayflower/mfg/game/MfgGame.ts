@@ -114,5 +114,25 @@
 
             // draw image
             LibDrawing.drawImage(ctx, MfgImage.getImage(), MfgGame.player.getX(), MfgGame.player.getY());
+
+            MfgGame.drawItems(ctx);
+        }
+
+        /**
+         * @param ctx
+         */
+        public static drawItems(ctx:CanvasRenderingContext2D):void
+        {
+            MfgGame.items.forEach(function(item:MfgItem) {
+                //draw the player
+                LibDrawing.fillRect(
+                    ctx,
+                    MfgSettings.COLOR_PLAYER,
+                    item.getX(),
+                    item.getY(),
+                    MfgSettings.ITEM_WIDTH,
+                    MfgSettings.ITEM_HEIGHT
+                );
+            });
         }
     }
