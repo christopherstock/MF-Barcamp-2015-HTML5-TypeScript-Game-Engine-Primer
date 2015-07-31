@@ -119,15 +119,6 @@
                 &&  item.x                           <= this.x + MfgSettings.ITEM_WIDTH
                 &&  item.y                           <= this.y + MfgSettings.ITEM_HEIGHT
             );
-/*
-            return !(
-                   item.getX()                           > this.x + MfgSettings.ITEM_HEIGHT
-                || item.getX() + MfgSettings.ITEM_HEIGHT < this.x
-                || item.getY()                           > this.y + MfgSettings.ITEM_WIDTH
-                || item.getY() + MfgSettings.ITEM_WIDTH  < this.y
-            );
-*/
-
         }
 
         /**
@@ -192,25 +183,17 @@
                     LibDrawing.fillRect(
                         ctx,
                         MfgSettings.COLOR_ITEM,
-                        MfgGame.items[i].getX(),
-                        MfgGame.items[i].getY(),
+                        MfgGame.items[i].getX() - MfgCamera.offsetX,
+                        MfgGame.items[i].getY() - MfgCamera.offsetY,
                         MfgSettings.ITEM_WIDTH,
                         MfgSettings.ITEM_HEIGHT
                     );
                 }
-/*
-                LibDrawing.drawImage(
-                    ctx,
-                    MfgImage.getImage( MfgImage.ITEM_MAYFLOWER_STATIC ),
-                    MfgGame.items[ i ].getX(),
-                    MfgGame.items[ i ].getY(),
-                    MfgGame.items[ i ].alpha
-                );
-*/
+
                 MfgSprite.ITEM_MF_LOGO.draw(
                     ctx,
-                    MfgGame.items[ i ].getX(),
-                    MfgGame.items[ i ].getY(),
+                    MfgGame.items[ i ].getX() - MfgCamera.offsetX,
+                    MfgGame.items[ i ].getY() - MfgCamera.offsetY,
                     MfgGame.items[ i ].alpha
                 );
             }

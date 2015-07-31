@@ -136,8 +136,8 @@
                 LibDrawing.fillRect(
                     MfgGame.canvas.getContext(),
                     MfgSettings.COLOR_PLAYER,
-                    this.x,
-                    this.y,
+                    this.x - MfgCamera.offsetX,
+                    this.y - MfgCamera.offsetY,
                     this.width,
                     this.height
                 );
@@ -147,8 +147,8 @@
             this.sprite.draw
             (
                 ctx,
-                this.x,
-                this.y,
+                this.x - MfgCamera.offsetX,
+                this.y - MfgCamera.offsetY,
                 1.0
             );
         }
