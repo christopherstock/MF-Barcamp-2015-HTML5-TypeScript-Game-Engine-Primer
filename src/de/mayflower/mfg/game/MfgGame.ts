@@ -87,29 +87,35 @@
             {
                 MfgGame.player.setNewSprite(MfgSprite.PLAYER_WALK_RIGHT);
                 MfgGame.player.setX( MfgGame.player.getX() + MfgSettings.PLAYER_SPEED );
-                MfgGame.player.lookingdirection = 0; // Right
+                MfgGame.player.lookingdirection = MfgPlayer.LOOKINGDIRECTION_RIGHT;
             }
             if ( LibKeySystem.isKeyPressed( MfgSettings.KEY_LEFT  ) )
             {
                 MfgGame.player.setNewSprite(MfgSprite.PLAYER_WALK_LEFT);
                 MfgGame.player.setX( MfgGame.player.getX() - MfgSettings.PLAYER_SPEED );
-                MfgGame.player.lookingdirection = 1; // Left
+                MfgGame.player.lookingdirection = MfgPlayer.LOOKINGDIRECTION_LEFT;
             }
             if ( LibKeySystem.isKeyPressed( MfgSettings.KEY_UP    ) ) MfgGame.player.setY( MfgGame.player.getY() - MfgSettings.PLAYER_SPEED );
             if ( LibKeySystem.isKeyPressed( MfgSettings.KEY_DOWN  ) ) MfgGame.player.setY( MfgGame.player.getY() + MfgSettings.PLAYER_SPEED );
 
             if (!LibKeySystem.isKeyPressed( MfgSettings.KEY_LEFT  ) && !LibKeySystem.isKeyPressed( MfgSettings.KEY_RIGHT  ))
             {
-                if (MfgGame.player.lookingdirection == 0) MfgGame.player.setNewSprite(MfgSprite.PLAYER_STAND_RIGHT); // Looks right
-                if (MfgGame.player.lookingdirection == 1) MfgGame.player.setNewSprite(MfgSprite.PLAYER_STAND_LEFT); // Looks right
+                if (MfgGame.player.lookingdirection == MfgPlayer.LOOKINGDIRECTION_RIGHT) MfgGame.player.setNewSprite(MfgSprite.PLAYER_STAND_RIGHT);
+                if (MfgGame.player.lookingdirection == MfgPlayer.LOOKINGDIRECTION_LEFT) MfgGame.player.setNewSprite(MfgSprite.PLAYER_STAND_LEFT);
             }
 
-
-
             //clip level bounds
-            if ( MfgGame.player.getX() >= MfgSettings.LEVEL_WIDTH  - MfgGame.player.getWidth()  ) MfgGame.player.setX( MfgSettings.LEVEL_WIDTH  - MfgGame.player.getWidth()  );
+            if ( MfgGame.player.getX() >= MfgSettings.LEVEL_WIDTH  - MfgGame.player.getWidth()  )
+            {
+                MfgGame.player.setX( MfgSettings.LEVEL_WIDTH  - MfgGame.player.getWidth()  );
+                if (LibKeySystem.isKeyPressed( MfgSettings.KEY_RIGHT  )) MfgGame.player.setNewSprite(MfgSprite.PLAYER_STAND_RIGHT);
+            }
             if ( MfgGame.player.getY() >= MfgSettings.LEVEL_HEIGHT - MfgGame.player.getHeight() ) MfgGame.player.setY( MfgSettings.LEVEL_HEIGHT - MfgGame.player.getHeight() );
-            if ( MfgGame.player.getX() < 0 ) MfgGame.player.setX( 0 );
+            if ( MfgGame.player.getX() < 0 )
+            {
+                MfgGame.player.setX( 0 );
+                if (LibKeySystem.isKeyPressed( MfgSettings.KEY_LEFT )) MfgGame.player.setNewSprite(MfgSprite.PLAYER_STAND_LEFT);
+            }
             if ( MfgGame.player.getY() < 0 ) MfgGame.player.setY( 0 );
 
             //render items

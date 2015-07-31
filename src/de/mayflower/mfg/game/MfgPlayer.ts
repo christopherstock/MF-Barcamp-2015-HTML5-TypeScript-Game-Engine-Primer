@@ -20,8 +20,11 @@
         /** Current player sprite. */
         private     sprite          :MfgSprite          = null;
 
-        /** Lookingdirection-Left = 1; LookingdirectionRight = 0 */
+        /** Last Lookingdirection of player */
         public     lookingdirection:number             = 0;
+
+        public static LOOKINGDIRECTION_RIGHT: number = 0;
+        public static LOOKINGDIRECTION_LEFT: number = 1;
 
 
         /*****************************************************************************
