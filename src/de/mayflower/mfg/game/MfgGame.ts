@@ -28,7 +28,6 @@
             //create player instance
             MfgGame.player = new MfgPlayer( 40, 80, 60, 150 );
 
-
             //try drawing an image
             var imageZelda = new Image();
             imageZelda.src = "res/image/player1.png";
@@ -63,8 +62,6 @@
             if ( LibKeySystem.isKeyPressed( MfgSettings.KEY_LEFT  ) ) MfgGame.player.setX( MfgGame.player.getX() - 5 );
             if ( LibKeySystem.isKeyPressed( MfgSettings.KEY_UP    ) ) MfgGame.player.setY( MfgGame.player.getY() - 5  );
             if ( LibKeySystem.isKeyPressed( MfgSettings.KEY_DOWN  ) ) MfgGame.player.setY( MfgGame.player.getY() + 5 );
-
-
 
 
             //clip level bounds
