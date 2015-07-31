@@ -34,5 +34,8 @@
         /** The keycode that represents the 'ARROW DOWN' key. */
         public          static          KEY_DOWN                :number             = 40;
         /** Plaeyer speed pixel pro tick. */
-        public          static          PLAYER_SPEED             :number             =  5;
+        public          static          PLAYER_SPEED             :number            =  5;
+        /** Player start position. */
+        public          static          PLAYER_START_X           :number            = 40;
+        public          static          PLAYER_START_Y           :number            = 80;
     }

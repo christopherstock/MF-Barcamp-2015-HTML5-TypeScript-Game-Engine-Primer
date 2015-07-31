@@ -26,7 +26,7 @@
             document.body.appendChild( MfgGame.canvas.getCanvasTag() );
             
             //create player instance
-            MfgGame.player = new MfgPlayer( 40, 80, 60, 150 );
+            MfgGame.player = new MfgPlayer( MfgSettings.PLAYER_START_X, MfgSettings.PLAYER_START_Y , 60, 150 );
 
             MfgImage.loadImage(MfgGame.initRest);
         }
