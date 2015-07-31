@@ -46,6 +46,9 @@
             //create player instance
             MfgGame.player = new MfgPlayer( MfgSettings.PLAYER_START_X, MfgSettings.PLAYER_START_Y , MfgImage.getImage(MfgImage.PLAYER1_LEFT).width, MfgImage.getImage(MfgImage.PLAYER1_LEFT).height);
 
+            //create all sprites
+            MfgSprite.init();
+
             //create all items
             MfgGame.items  = MfgItem.generateRandomItems();
 
@@ -87,6 +90,9 @@
             {
                 MfgGame.items[ i ].render();
             }
+
+            //render sprites
+            MfgSprite.ITEM_MF_LOGO.nextTick();
         }
 
         /*****************************************************************************

@@ -11,7 +11,8 @@
         public  static  PLAYER1_RIGHT           :string                 = "res/image/standRight.png";
         public  static  PLAYER1_WALK_LEFT       :string                 = "res/image/walkLeft.png";
         public  static  PLAYER1_WALK_RIGHT      :string                 = "res/image/walkRight.png";
-        public  static  ITEM_MAYFLOWER_STATIC   :string                 = "res/image/icon.png";
+        public  static  ITEM_MAYFLOWER_STATIC   :string                 = "res/image/itemStatic.png";
+        public  static  ITEM_MAYFLOWER_SPRITE   :string                 = "res/image/itemSprite.png";
 
         private static  FILENAMES               :Array<string>          =
         [
@@ -20,6 +21,7 @@
             MfgImage.PLAYER1_WALK_LEFT,
             MfgImage.PLAYER1_WALK_RIGHT,
             MfgImage.ITEM_MAYFLOWER_STATIC,
+            MfgImage.ITEM_MAYFLOWER_SPRITE,
         ];
 
         private static  images                  :Array<string>          = new Array<string>();

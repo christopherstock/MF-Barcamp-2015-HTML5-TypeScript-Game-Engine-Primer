@@ -151,7 +151,7 @@
                         MfgSettings.ITEM_HEIGHT
                     );
                 }
-
+/*
                 LibDrawing.drawImage(
                     ctx,
                     MfgImage.getImage( MfgImage.ITEM_MAYFLOWER_STATIC ),
@@ -159,6 +159,14 @@
                     MfgGame.items[ i ].getY(),
                     MfgGame.items[ i ].alpha
                 );
+*/
+                MfgSprite.ITEM_MF_LOGO.draw(
+                    ctx,
+                    MfgGame.items[ i ].getX(),
+                    MfgGame.items[ i ].getY(),
+                    MfgGame.items[ i ].alpha
+                );
+
             }
         }
     }

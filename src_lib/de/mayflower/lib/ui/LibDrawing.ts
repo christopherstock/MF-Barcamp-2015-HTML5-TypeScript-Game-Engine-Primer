@@ -39,4 +39,42 @@
             ctx.drawImage(img, x, y);
             ctx.restore();
         }
+
+        /*****************************************************************************
+        *   Draws an image at the specified location with a specified anchor
+        *   and scales it to the given destiny dimensions.
+        *
+        *   @param  ctx         The rendering context
+        *   @param  img         The image to draw.
+        *   @param  destX       Drawing position x.
+        *   @param  destY       Drawing position y.
+        *   @param  srcX        Clipping position x.
+        *   @param  srcY        Clipping position y.
+        *   @param  srcWidth    Clipping width.
+        *   @param  srcHeight   Clipping height.
+        *   @param  destWidth   Destination width.
+        *   @param  destHeight  Destination height.
+        *   @param  alpha       The desired alpha value to draw the image.
+        *                       This value has a range of 0.0 to 1.0.
+        *****************************************************************************/
+        public static drawImageScaledClipped
+        (
+            ctx         :CanvasRenderingContext2D,
+            img         :HTMLImageElement,
+            destX       :number,
+            destY       :number,
+            srcX        :number,
+            srcY        :number,
+            srcWidth    :number,
+            srcHeight   :number,
+            destWidth   :number,
+            destHeight  :number,
+            alpha       :number
+        )
+        {
+            ctx.save();
+            ctx.globalAlpha = alpha;
+            ctx.drawImage( img, srcX, srcY, srcWidth, srcHeight, destX, destY, destWidth, destHeight );
+            ctx.restore();
+        }
     }

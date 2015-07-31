@@ -7,6 +7,9 @@
     *****************************************************************************/
     class MfgSprite
     {
+        /** The mayflower logo. */
+        public      static      ITEM_MF_LOGO                :MfgSprite                  = null;
+
         /** The image being used by this sprite, containing all frames. */
         private                 iImg                        :HTMLImageElement           = null;
         /** The number of horizontal frames in this sprite's image. */
@@ -25,6 +28,11 @@
         private                 iCurrentTick                :number                     = 0;
         /** The delay time between frame change in ticks. */
         private                 iTicksBetweenFrameChange    :number                     = 0;
+
+        public static init()
+        {
+            MfgSprite.ITEM_MF_LOGO = new MfgSprite( MfgImage.getImage( MfgImage.ITEM_MAYFLOWER_SPRITE ), 3, 6, 18, 4  );
+        }
 
         /*****************************************************************************
          *   Creates a new sprite with the specified properties.
@@ -57,7 +65,6 @@
          *****************************************************************************/
         public draw( ctx:CanvasRenderingContext2D, x:number, y:number, alpha:number )
         {
-/*
             LibDrawing.drawImageScaledClipped
                 (
                     ctx,
@@ -72,7 +79,6 @@
                     this.iFrameHeight,
                     alpha
                 );
-*/
         }
 
         /*****************************************************************************
