@@ -30,9 +30,13 @@
         *   @param  img     The image to draw.
         *   @param  x       The rect's X.
         *   @param  y       The rect's Y.
+        *   @param  alpha   The alpha value to draw this image with.
         *****************************************************************************/
-        public static drawImage( ctx:CanvasRenderingContext2D, img:HTMLImageElement, x:number, y:number ):void
+        public static drawImage( ctx:CanvasRenderingContext2D, img:HTMLImageElement, x:number, y:number, alpha:number ):void
         {
+            ctx.save();
+            ctx.globalAlpha = alpha;
             ctx.drawImage(img, x, y);
+            ctx.restore();
         }
     }

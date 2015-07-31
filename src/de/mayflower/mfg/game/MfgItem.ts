@@ -47,22 +47,6 @@
         }
 
         /**
-         * @return {boolean}
-         */
-        public getPickedUp():boolean
-        {
-            return this.pickedUp;
-        }
-
-        /**
-         * @param pickedUp
-         */
-        public setPickedUp(pickedUp:boolean)
-        {
-            this.pickedUp = pickedUp;
-        }
-
-        /**
          * @return {number}
          */
         public getAlpha():number
@@ -118,14 +102,23 @@
         /**
          * Changes the alpha-color-value
          */
-        public fadeOut()
+        public render()
         {
-            if (this.alpha == 0) {
-                return;
+            //check if item is picked
+            if ( this.pickedUp )
+            {
+                this.alpha -= MfgSettings.ITEM_FADE_OUT_DELAY;
+                if ( this.alpha < 0 )
+                {
+                    this.alpha = 0;
+                }
             }
-
-            if (this.alpha > 0) {
-                this.alpha --;
+            else
+            {
+                if ( this.collidesWithPlayer( MfgGame.player ) )
+                {
+                    this.pickedUp = true;
+                }
             }
         }
 
@@ -136,24 +129,29 @@
         {
             for ( var i:number = 0; i < MfgGame.items.length; ++i )
             {
-                if (MfgGame.items[i].getAlpha() == 0) {
+                if ( MfgGame.items[i].getAlpha() == 0 )
+                {
                     continue;
                 }
 
-                LibDrawing.fillRect(
-                    ctx,
-                    MfgSettings.COLOR_ITEM,
-                    MfgGame.items[ i ].getX(),
-                    MfgGame.items[ i ].getY(),
-                    MfgSettings.ITEM_WIDTH,
-                    MfgSettings.ITEM_HEIGHT
-                );
+                if ( MfgSettings.DEBUG_DRAW_RECTS_ITEMS )
+                {
+                    LibDrawing.fillRect(
+                        ctx,
+                        MfgSettings.COLOR_ITEM,
+                        MfgGame.items[i].getX(),
+                        MfgGame.items[i].getY(),
+                        MfgSettings.ITEM_WIDTH,
+                        MfgSettings.ITEM_HEIGHT
+                    );
+                }
 
                 LibDrawing.drawImage(
                     ctx,
                     MfgImage.getImage( MfgImage.ITEM_MAYFLOWER_STATIC ),
                     MfgGame.items[ i ].getX(),
-                    MfgGame.items[ i ].getY()
+                    MfgGame.items[ i ].getY(),
+                    MfgGame.items[ i ].alpha
                 );
             }
         }

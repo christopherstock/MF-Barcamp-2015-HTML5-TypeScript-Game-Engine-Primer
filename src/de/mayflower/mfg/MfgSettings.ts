@@ -64,4 +64,11 @@
         public          static          ITEM_WIDTH              :number             = 100;
         /** Item's height. */
         public          static          ITEM_HEIGHT             :number             = 100;
+        /** Item's alpha fade out delta per tick. */
+        public          static          ITEM_FADE_OUT_DELAY     :number             = 0.05;
+
+        /** Draw debug rects for player. */
+        public          static          DEBUG_DRAW_RECTS_PLAYER :boolean            = false;
+        /** Draw debug rects for items. */
+        public          static          DEBUG_DRAW_RECTS_ITEMS  :boolean            = false;
     }

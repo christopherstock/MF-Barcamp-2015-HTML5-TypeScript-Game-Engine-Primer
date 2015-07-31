@@ -79,17 +79,10 @@
             if ( MfgGame.player.getX() < 0 ) MfgGame.player.setX( 0 );
             if ( MfgGame.player.getY() < 0 ) MfgGame.player.setY( 0 );
 
-            for(var itemIndex:number = 0; itemIndex < MfgGame.items.length; itemIndex++) {
-                var currentItem = MfgGame.items[itemIndex];
-
-                if (currentItem.getPickedUp()) {
-                    currentItem.fadeOut();
-                    continue;
-                }
-
-                if (currentItem.collidesWithPlayer(MfgGame.player)) {
-                    currentItem.setPickedUp(true);
-                }
+            //render items
+            for ( var i:number = 0; i < MfgGame.items.length; i++ )
+            {
+                MfgGame.items[ i ].render();
             }
         }
 
@@ -112,19 +105,9 @@
             MfgLevel.draw( ctx );
 
             //draw all items
-            MfgItem.drawAll(ctx);
+            MfgItem.drawAll( ctx );
 
-            //draw player rect
-            LibDrawing.fillRect(
-                MfgGame.canvas.getContext(),
-                MfgSettings.COLOR_PLAYER,
-                MfgGame.player.getX(),
-                MfgGame.player.getY(),
-                MfgGame.player.getWidth(),
-                MfgGame.player.getHeight()
-            );
-
-            //draw player image
-            LibDrawing.drawImage(ctx, MfgImage.getImage(MfgImage.PLAYER1_LEFT), MfgGame.player.getX(), MfgGame.player.getY());
+            //draw player
+            MfgPlayer.draw( ctx );
         }
     }

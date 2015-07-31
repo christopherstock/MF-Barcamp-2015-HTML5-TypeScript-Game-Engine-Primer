@@ -111,4 +111,30 @@
         {
             this.height = height;
         }
+
+        public static draw( ctx:CanvasRenderingContext2D )
+        {
+            //draw player rect
+            if ( MfgSettings.DEBUG_DRAW_RECTS_PLAYER )
+            {
+                LibDrawing.fillRect(
+                    MfgGame.canvas.getContext(),
+                    MfgSettings.COLOR_PLAYER,
+                    MfgGame.player.getX(),
+                    MfgGame.player.getY(),
+                    MfgGame.player.getWidth(),
+                    MfgGame.player.getHeight()
+                );
+            }
+
+            //draw player image
+            LibDrawing.drawImage
+            (
+                ctx,
+                MfgImage.getImage( MfgImage.PLAYER1_LEFT ),
+                MfgGame.player.getX(),
+                MfgGame.player.getY(),
+                1.0
+            );
+        }
     }
