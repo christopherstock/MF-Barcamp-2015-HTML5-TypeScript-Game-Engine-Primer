@@ -49,5 +49,14 @@
         /** Level height. */
         public          static          LEVEL_HEIGHT            :number            = 250;
 
-
+        /** The minimum points for collectable items */
+        public          static          MIN_ITEM_POINS          :number             = 10;
+        /** The maximum points for collectable items */
+        public          static          MAX_ITEM_POINS          :number             = 100;
+        /** Maximum numbers of collectable items */
+        public          static          ITEM_COUNT              :number             = 10;
+        /** Item's width. */
+        public          static          ITEM_WIDTH              :number             = 10;
+        /** Item's height. */
+        public          static          ITEM_HEIGHT             :number             = 10;
     }

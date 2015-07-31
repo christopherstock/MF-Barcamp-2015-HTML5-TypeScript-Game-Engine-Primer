@@ -13,6 +13,11 @@
         /** The player object. */
         public      static      player              :MfgPlayer                  = null;
 
+        public      static      player1             :HTMLImageElement           = null;
+
+        /** List of collectable items */
+        public      static      items               :Array<MfgItem>             = null;
+
         /*****************************************************************************
         *   Inits the game engine.
         *****************************************************************************/
@@ -35,6 +40,8 @@
         {
             //create player instance
             MfgGame.player = new MfgPlayer( MfgSettings.PLAYER_START_X, MfgSettings.PLAYER_START_Y , MfgImage.getImage().width, MfgImage.getImage().height);
+
+            MfgGame.items  = MfgItem.generateRandomItems();
 
             //init key system
             LibKeySystem.init();
