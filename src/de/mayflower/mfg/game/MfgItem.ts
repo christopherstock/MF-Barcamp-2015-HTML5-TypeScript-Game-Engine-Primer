@@ -12,10 +12,6 @@ class MfgItem
     private            y               :number             = 0;
     /** Points gained by player if collected */
     private            points          :number             = 0;
-    /** Item's width. */
-    private     static ITEM_WIDTH      :number             = 10;
-    /** Item's height. */
-    private     static ITEM_HEIGHT     :number             = 10;
 
     /**
      * @param x
@@ -46,20 +42,15 @@ class MfgItem
     }
 
     /**
-     * @param numberOfItems
-     * @param canvas
      * @return {MfgItem[]}
      */
-    public static generateRandomItems(numberOfItems:number, canvas:MfgCanvas):Array<MfgItem>
+    public static generateRandomItems():Array<MfgItem>
     {
         var itemList = new Array<MfgItem>();
 
-        var canvasWidth  = canvas.getWidth();
-        var canvasHeight = canvas.getHeight();
-
         while(true) {
-            var newX   = LibMath.generateRandomNumber(0, canvasWidth);
-            var newY   = LibMath.generateRandomNumber(0, canvasHeight);
+            var newX   = LibMath.generateRandomNumber(0, MfgGame.canvas.getWidth());
+            var newY   = LibMath.generateRandomNumber(0, MfgGame.canvas.getHeight());
             var points = LibMath.generateRandomNumber(
                 MfgSettings.MIN_ITEM_POINS,
                 MfgSettings.MAX_ITEM_POINS
@@ -67,13 +58,13 @@ class MfgItem
 
             var newItem = new MfgItem(newX, newY, points);
 
-            for(let existingItem in itemList) {
-                if (!newItem.collidesWithItem(existingItem)) {
+            for(var i:number = 0; i < itemList.length; i++) {
+                if (!newItem.collidesWithItem(itemList[i])) {
                     itemList.push(newItem);
                 }
             }
 
-            if (itemList.length == numberOfItems) {
+            if (itemList.length == MfgSettings.ITEM_COUNT) {
                 return itemList;
             }
         }
@@ -87,11 +78,11 @@ class MfgItem
      */
     public collidesWithItem(item:MfgItem):boolean
     {
-        if (item.getX() >= this.x || item.getX() <= (this.x + MfgItem.ITEM_WIDTH)) {
+        if (item.getX() >= this.x || item.getX() <= (this.x + MfgSettings.ITEM_WIDTH)) {
             return true;
         }
 
-        if (item.getY() >= this.y || item.getY() <= (this.y + MfgItem.ITEM_HEIGHT)) {
+        if (item.getY() >= this.y || item.getY() <= (this.y + MfgSettings.ITEM_HEIGHT)) {
             return true;
         }
 
