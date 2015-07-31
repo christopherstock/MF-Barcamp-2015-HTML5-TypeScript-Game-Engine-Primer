@@ -31,6 +31,9 @@
             //create player instance
             MfgGame.player = new MfgPlayer( MfgSettings.PLAYER_START_X, MfgSettings.PLAYER_START_Y , 60, 150 );
 
+            //load all sounds
+            MfgSound.loadSounds();
+
             //load all images
             MfgImage.loadImages(MfgGame.initRest);
         }
