@@ -7,14 +7,10 @@
     *****************************************************************************/
     class MfgGame
     {
-        /*****************************************************************************
-        *   The canvas context.
-        *****************************************************************************/
+        /** The canvas context. */
         public      static      canvas              :MfgCanvas                  = null;
 
-        /*****************************************************************************
-         *   The player object.
-         *****************************************************************************/
+        /** The player object. */
         public      static      player              :MfgPlayer                  = null;
 
         /*****************************************************************************
@@ -57,7 +53,7 @@
         }
 
         /*****************************************************************************
-        *   Inits the game engine.
+        *   Being invoked each tick, this method specifies the 'game loop'.
         *****************************************************************************/
         public static tick():void
         {
@@ -66,7 +62,7 @@
         }
 
         /*****************************************************************************
-        *   Specifies all rendering operations.
+        *   Specifies all rendering operations being invoked each tick.
         *****************************************************************************/
         public static render():void
         {
@@ -87,10 +83,11 @@
         }
 
         /*****************************************************************************
-        *   Specifies all drawing operations.
+        *   Specifies all drawing operations being invoked each tick.
         *****************************************************************************/
         public static draw( ctx:CanvasRenderingContext2D ):void
         {
+            //clear the canvas
             LibDrawing.fillRect(
                 ctx,
                 MfgSettings.COLOR_BG,
@@ -100,6 +97,7 @@
                 MfgGame.canvas.getHeight()
             );
 
+            //draw the player
             LibDrawing.fillRect(
                 MfgGame.canvas.getContext(),
                 MfgSettings.COLOR_PLAYER,

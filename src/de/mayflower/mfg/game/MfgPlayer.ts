@@ -1,92 +1,114 @@
-/*****************************************************************************
- *   Represents one player.
- *
- *   @author     C. Heldt
- *   @version    0.0.1
- *****************************************************************************/
-class MfgPlayer
-{
-    private x           :number         = 0;
-    private y           :number         = 0;
-    private width       :number         = 0;
-    private height      :number         = 0;
 
-    /**
-     *
-     * @param x
-     * @param y
-     * @param width
-     * @param height
-     */
-    constructor(x:number, y:number, width:number, height:number)
+    /*****************************************************************************
+    *   Represents the player of the game.
+    *
+    *   @author     C. Heldt
+    *   @version    0.0.1
+    *****************************************************************************/
+    class MfgPlayer
     {
-        this.x      = x;
-        this.y      = y;
-        this.width  = width;
-        this.height = height;
-    }
+        /** Location X. */
+        private     x               :number             = 0;
+        /** Location Y. */
+        private     y               :number             = 0;
+        /** Player's width. */
+        private     width           :number             = 0;
+        /** Player's height. */
+        private     height          :number             = 0;
 
-    /**
-     * @return {number}
-     */
-    public getX():number
-    {
-        return this.x;
-    }
+        /*****************************************************************************
+        *   Creates a player instance.
+        *
+        *   @param  x       Location X.
+        *   @param  y       Location Y.
+        *   @param  width   Player width.
+        *   @param  height  Player height.
+        *****************************************************************************/
+        constructor( x:number, y:number, width:number, height:number )
+        {
+            this.x      = x;
+            this.y      = y;
+            this.width  = width;
+            this.height = height;
+        }
 
-    /**
-     * @param x
-     */
-    public setX(x:number)
-    {
-        this.x = x;
-    }
+        /*****************************************************************************
+        *   Returns location X.
+        *
+        *   @return The player's location X.
+        *****************************************************************************/
+        public getX():number
+        {
+            return this.x;
+        }
 
-    /**
-     * @return {number}
-     */
-    public getY():number
-    {
-        return this.y;
-    }
+        /*****************************************************************************
+        *   Sets location X.
+        *
+        *   @param  x   The player's new location X.
+        *****************************************************************************/
+        public setX( x:number )
+        {
+            this.x = x;
+        }
 
-    /**
-     * @param y
-     */
-    public setY(y:number)
-    {
-        this.y = y;
-    }
+        /*****************************************************************************
+        *   Returns location Y.
+        *
+        *   @return The player's location Y.
+        *****************************************************************************/
+        public getY():number
+        {
+            return this.y;
+        }
 
-    /**
-     * @return {number}
-     */
-    public getWidth():number
-    {
-        return this.width;
-    }
+        /*****************************************************************************
+        *   Sets location Y.
+        *
+        *   @param  y   The player's new location Y.
+        *****************************************************************************/
+        public setY( y:number )
+        {
+            this.y = y;
+        }
 
-    /**
-     * @param width
-     */
-    public setWidth(width:number)
-    {
-        this.width = width;
-    }
+        /*****************************************************************************
+        *   Returns player's width.
+        *
+        *   @return The player's width.
+        *****************************************************************************/
+        public getWidth():number
+        {
+            return this.width;
+        }
 
-    /**
-     * @return {number}
-     */
-    public getHeight():number
-    {
-        return this.height;
-    }
+        /*****************************************************************************
+        *   Sets width.
+        *
+        *   @param  width   The player's new width.
+        *****************************************************************************/
+        public setWidth( width:number )
+        {
+            this.width = width;
+        }
 
-    /**
-     * @param height
-     */
-    public setHeight(height:number)
-    {
-        this.height = height;
+        /*****************************************************************************
+        *   Returns player's height.
+        *
+        *   @return The player's height.
+        *****************************************************************************/
+        public getHeight():number
+        {
+            return this.height;
+        }
+
+        /*****************************************************************************
+        *   Sets height.
+        *
+        *   @param  height      The player's new height.
+        *****************************************************************************/
+        public setHeight( height:number )
+        {
+            this.height = height;
+        }
     }
-}

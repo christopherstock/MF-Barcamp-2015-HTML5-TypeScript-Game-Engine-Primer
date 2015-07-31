@@ -9,7 +9,6 @@
     {
         /** The width of the canvas element. */
         public          static          CANVAS_WIDTH            :number             = 800;
-
         /** The height of the canvas element. */
         public          static          CANVAS_HEIGHT           :number             = 600;
 
@@ -27,12 +26,11 @@
         public          static          WEBPAGE_TITLE           :string             = "Mayflower Barcamp 2015 - HTML5 TypeScript Game Engine Primer";
 
         /** The keycode that represents the 'ARROW LEFT' key. */
-        public          static          KEY_LEFT                :number         = 37;
+        public          static          KEY_LEFT                :number             = 37;
         /** The keycode that represents the 'ARROW UP' key. */
-        public          static          KEY_UP                  :number         = 38;
+        public          static          KEY_UP                  :number             = 38;
         /** The keycode that represents the 'ARROW RIGHT' key. */
-        public          static          KEY_RIGHT               :number         = 39;
+        public          static          KEY_RIGHT               :number             = 39;
         /** The keycode that represents the 'ARROW DOWN' key. */
-        public          static          KEY_DOWN                :number         = 40;
-
+        public          static          KEY_DOWN                :number             = 40;
     }
