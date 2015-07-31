@@ -35,9 +35,15 @@
         public          static          KEY_DOWN                :number             = 40;
 
         /** Plaeyer speed pixel pro tick. */
-        public          static          PLAYER_SPEED             :number            =  5;
+        public          static          PLAYER_SPEED            :number            = 15;
         /** Player start X position. */
-        public          static          PLAYER_START_X           :number            = 40;
+        public          static          PLAYER_START_X          :number            = 0;
         /** Player start Y position. */
-        public          static          PLAYER_START_Y           :number            = 80;
+        public          static          PLAYER_START_Y          :number            = 0;
+
+        /** Level width. */
+        public          static          LEVEL_WIDTH             :number            = 400;
+        /** Level height. */
+        public          static          LEVEL_HEIGHT            :number            = 250;
+
     }
