@@ -128,7 +128,7 @@
             this.points += delta;
         }
 
-        public static draw( ctx:CanvasRenderingContext2D )
+        public draw( ctx:CanvasRenderingContext2D )
         {
             //draw player rect
             if ( MfgSettings.DEBUG_DRAW_RECTS_PLAYER )
@@ -136,19 +136,19 @@
                 LibDrawing.fillRect(
                     MfgGame.canvas.getContext(),
                     MfgSettings.COLOR_PLAYER,
-                    MfgGame.player.getX(),
-                    MfgGame.player.getY(),
-                    MfgGame.player.getWidth(),
-                    MfgGame.player.getHeight()
+                    this.x,
+                    this.y,
+                    this.width,
+                    this.height
                 );
             }
 
             //draw player sprite
-            MfgGame.player.sprite.draw
+            this.sprite.draw
             (
                 ctx,
-                MfgGame.player.getX(),
-                MfgGame.player.getY(),
+                this.x,
+                this.y,
                 1.0
             );
         }

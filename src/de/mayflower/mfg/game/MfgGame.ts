@@ -121,6 +121,6 @@
             MfgItem.drawAll( ctx );
 
             //draw player
-            MfgPlayer.draw( ctx );
+            MfgGame.player.draw( ctx );
         }
     }
