@@ -7,19 +7,19 @@
     *****************************************************************************/
     class MfgImage
     {
-        public  static  PLAYER1_LEFT            :string                 = "res/image/player/standLeft.png";
-        public  static  PLAYER1_RIGHT           :string                 = "res/image/player/standRight.png";
-        public  static  PLAYER1_WALK_LEFT       :string                 = "res/image/player/walkLeft.png";
-        public  static  PLAYER1_WALK_RIGHT      :string                 = "res/image/player/walkRight.png";
-        public  static  ITEM_MAYFLOWER_STATIC   :string                 = "res/image/item/mfLogoStatic.png";
-        public  static  ITEM_MAYFLOWER_SPRITE   :string                 = "res/image/item/mfLogoSprite.png";
+        public  static  PLAYER_STAND_LEFT           :string                 = "res/image/player/standLeft.png";
+        public  static  PLAYER_STAND_RIGHT          :string                 = "res/image/player/standRight.png";
+        public  static  PLAYER_WALK_LEFT            :string                 = "res/image/player/walkLeft.png";
+        public  static  PLAYER_WALK_RIGHT           :string                 = "res/image/player/walkRight.png";
+        public  static  ITEM_MAYFLOWER_STATIC       :string                 = "res/image/item/mfLogoStatic.png";
+        public  static  ITEM_MAYFLOWER_SPRITE       :string                 = "res/image/item/mfLogoSprite.png";
 
         private static  FILENAMES               :Array<string>          =
         [
-            MfgImage.PLAYER1_LEFT,
-            MfgImage.PLAYER1_RIGHT,
-            MfgImage.PLAYER1_WALK_LEFT,
-            MfgImage.PLAYER1_WALK_RIGHT,
+            MfgImage.PLAYER_STAND_LEFT,
+            MfgImage.PLAYER_STAND_RIGHT,
+            MfgImage.PLAYER_WALK_LEFT,
+            MfgImage.PLAYER_WALK_RIGHT,
             MfgImage.ITEM_MAYFLOWER_STATIC,
             MfgImage.ITEM_MAYFLOWER_SPRITE,
         ];

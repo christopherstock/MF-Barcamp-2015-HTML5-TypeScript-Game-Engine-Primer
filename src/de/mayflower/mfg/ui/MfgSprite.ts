@@ -9,6 +9,14 @@
     {
         /** The mayflower logo. */
         public      static      ITEM_MF_LOGO                :MfgSprite                  = null;
+        /** The player standing left. */
+        public      static      PLAYER_STAND_LEFT           :MfgSprite                  = null;
+        /** The player standing right. */
+        public      static      PLAYER_STAND_RIGHT          :MfgSprite                  = null;
+        /** The player walking left. */
+        public      static      PLAYER_WALK_LEFT            :MfgSprite                  = null;
+        /** The player walking right. */
+        public      static      PLAYER_WALK_RIGHT           :MfgSprite                  = null;
 
         /** The image being used by this sprite, containing all frames. */
         private                 iImg                        :HTMLImageElement           = null;
@@ -31,7 +39,11 @@
 
         public static init()
         {
-            MfgSprite.ITEM_MF_LOGO = new MfgSprite( MfgImage.getImage( MfgImage.ITEM_MAYFLOWER_SPRITE ), 3, 6, 18, 4  );
+            MfgSprite.ITEM_MF_LOGO       = new MfgSprite( MfgImage.getImage( MfgImage.ITEM_MAYFLOWER_SPRITE ), 3, 6, 18, 4  );
+            MfgSprite.PLAYER_STAND_LEFT  = new MfgSprite( MfgImage.getImage( MfgImage.PLAYER_STAND_LEFT     ), 1, 1, 1,  0  );
+            MfgSprite.PLAYER_STAND_RIGHT = new MfgSprite( MfgImage.getImage( MfgImage.PLAYER_STAND_RIGHT    ), 1, 1, 1,  0  );
+            MfgSprite.PLAYER_WALK_LEFT   = new MfgSprite( MfgImage.getImage( MfgImage.PLAYER_WALK_LEFT      ), 2, 1, 2,  4  );
+            MfgSprite.PLAYER_WALK_RIGHT  = new MfgSprite( MfgImage.getImage( MfgImage.PLAYER_WALK_RIGHT     ), 2, 1, 2,  4  );
         }
 
         /*****************************************************************************

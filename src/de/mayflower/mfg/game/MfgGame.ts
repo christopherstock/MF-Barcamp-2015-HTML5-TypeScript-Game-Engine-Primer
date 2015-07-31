@@ -28,9 +28,6 @@
             MfgGame.canvas = new MfgCanvas( MfgSettings.CANVAS_WIDTH, MfgSettings.CANVAS_HEIGHT );
             document.body.appendChild( MfgGame.canvas.getCanvasTag() );
             
-            //create player instance
-            MfgGame.player = new MfgPlayer( MfgSettings.PLAYER_START_X, MfgSettings.PLAYER_START_Y , 60, 150 );
-
             //load all sounds
             MfgSound.loadSounds();
 
@@ -43,11 +40,17 @@
         *****************************************************************************/
         private static initRest():void
         {
-            //create player instance
-            MfgGame.player = new MfgPlayer( MfgSettings.PLAYER_START_X, MfgSettings.PLAYER_START_Y , MfgImage.getImage(MfgImage.PLAYER1_LEFT).width, MfgImage.getImage(MfgImage.PLAYER1_LEFT).height);
-
             //create all sprites
             MfgSprite.init();
+
+            //create player instance
+            MfgGame.player = new MfgPlayer
+            (
+                MfgSettings.PLAYER_START_X,
+                MfgSettings.PLAYER_START_Y,
+                MfgSprite.PLAYER_WALK_LEFT.iFrameWidth,
+                MfgSprite.PLAYER_WALK_LEFT.iFrameHeight
+            );
 
             //create all items
             MfgGame.items  = MfgItem.generateRandomItems();

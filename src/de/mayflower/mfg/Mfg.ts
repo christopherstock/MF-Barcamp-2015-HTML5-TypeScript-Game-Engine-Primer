@@ -3,7 +3,9 @@
     *   The main class contains the application's points of entry and termination.
     *
     *   TODO HIGH   Prevent items from crossing the level bounds.
+    *   TODO HIGH   Clear ITEM_WIDTH, ITEM_HEIGHT.
     *   TODO HIGH   Scrolling level background.
+    *   TODO HIGH   Create different player sprites for different player states.
     *
     *   @author     Christopher Stock
     *   @version    0.0.1

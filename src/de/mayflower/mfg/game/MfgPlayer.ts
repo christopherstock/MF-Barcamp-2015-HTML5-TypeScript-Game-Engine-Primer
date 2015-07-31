@@ -139,11 +139,10 @@
                 );
             }
 
-            //draw player image
-            LibDrawing.drawImage
+            //draw player sprite
+            MfgSprite.PLAYER_STAND_RIGHT.draw
             (
                 ctx,
-                MfgImage.getImage( MfgImage.PLAYER1_LEFT ),
                 MfgGame.player.getX(),
                 MfgGame.player.getY(),
                 1.0
