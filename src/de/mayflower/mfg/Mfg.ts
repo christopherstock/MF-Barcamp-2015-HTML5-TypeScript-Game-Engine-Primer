@@ -2,12 +2,11 @@
     /*****************************************************************************
     *   The main class contains the application's points of entry and termination.
     *
-    *   TODO ASAP   Create folder for lib sources.
-    *   TODO HIGH   Image system.
-    *   TODO INIT   Implement Globbing for dynamic js loading in index.html.
+    *   TODO HIGH   Picked up items shall fade out.
+    *   TODO HIGH   Scrolling level background.
+    *   TODO HIGH   Player points.
+    *   TODO HIGH   Sprite system.
     *   TODO LOW    Sound system.
-    *   TODO LOW    Input (key) system.
-    *   TODO WEAK   Main-Thread system.
     *
     *   @author     Christopher Stock
     *   @version    0.0.1

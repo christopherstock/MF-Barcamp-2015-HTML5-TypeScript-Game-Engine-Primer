@@ -123,16 +123,17 @@
          */
         public static drawItems(ctx:CanvasRenderingContext2D):void
         {
-            MfgGame.items.forEach(function(item:MfgItem) {
+            for ( var i:number = 0; i < MfgGame.items.length; ++i )
+            {
                 //draw the player
                 LibDrawing.fillRect(
                     ctx,
                     MfgSettings.COLOR_PLAYER,
-                    item.getX(),
-                    item.getY(),
+                    MfgGame.items[ i ].getX(),
+                    MfgGame.items[ i ].getY(),
                     MfgSettings.ITEM_WIDTH,
                     MfgSettings.ITEM_HEIGHT
                 );
-            });
+            }
         }
     }
