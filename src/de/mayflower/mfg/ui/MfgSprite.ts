@@ -118,4 +118,10 @@
                 this.iCurrentFrame = 0;
             }
         }
+
+        public reset()
+        {
+            this.iCurrentFrame = 0;
+            this.iCurrentTick  = 0;
+        }
     }

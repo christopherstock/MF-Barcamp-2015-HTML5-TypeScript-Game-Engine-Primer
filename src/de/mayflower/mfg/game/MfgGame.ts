@@ -95,8 +95,10 @@
                 MfgGame.items[ i ].render();
             }
 
-            //render sprites
+            //render all sprites
             MfgSprite.ITEM_MF_LOGO.nextTick();
+            MfgSprite.PLAYER_WALK_LEFT.nextTick();
+            MfgSprite.PLAYER_WALK_RIGHT.nextTick();
         }
 
         /*****************************************************************************

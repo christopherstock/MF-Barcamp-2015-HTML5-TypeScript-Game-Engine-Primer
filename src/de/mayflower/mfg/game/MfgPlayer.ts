@@ -152,4 +152,10 @@
                 1.0
             );
         }
+
+        public setNewSprite( sprite:MfgSprite )
+        {
+            this.sprite = sprite;
+            this.sprite.reset();
+        }
     }
