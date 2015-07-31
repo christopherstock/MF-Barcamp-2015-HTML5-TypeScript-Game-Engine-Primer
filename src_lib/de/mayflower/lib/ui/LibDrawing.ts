@@ -8,7 +8,7 @@
     class LibDrawing
     {
         /*****************************************************************************
-        *   Fills a rect on canvas
+        *   Fills a rect on the given canvas context.
         *
         *   @param  ctx     The canvas drawing context.
         *   @param  color   The color to fill the rect with.
@@ -17,22 +17,21 @@
         *   @param  width   The rect's width.
         *   @param  height  The rect's height.
         *****************************************************************************/
-        public static fillRect
-        (
-            ctx:CanvasRenderingContext2D,
-            color:string,
-            x:number,
-            y:number,
-            width:number,
-            height:number
-        )
-        :void
+        public static fillRect( ctx:CanvasRenderingContext2D, color:string, x:number, y:number, width:number, height:number ):void
         {
             ctx.fillStyle = color;
             ctx.fillRect( x, y, width, height );
         }
 
-        public static drawImage(ctx:CanvasRenderingContext2D, img:HTMLImageElement, x:number, y:number)
+        /*****************************************************************************
+        *   Draws an image on the given canvas context.
+        *
+        *   @param  ctx     The canvas drawing context.
+        *   @param  img     The image to draw.
+        *   @param  x       The rect's X.
+        *   @param  y       The rect's Y.
+        *****************************************************************************/
+        public static drawImage( ctx:CanvasRenderingContext2D, img:HTMLImageElement, x:number, y:number ):void
         {
             ctx.drawImage(img, x, y);
         }
