@@ -2,6 +2,7 @@
     /*****************************************************************************
     *   The main class contains the application's points of entry and termination.
     *
+    *   TODO HIGH   Prevent items from crossing the level bounds.
     *   TODO HIGH   Scrolling level background.
     *
     *   @author     Christopher Stock
