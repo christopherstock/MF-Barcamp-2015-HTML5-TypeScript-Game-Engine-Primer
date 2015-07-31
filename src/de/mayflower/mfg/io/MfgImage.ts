@@ -7,12 +7,12 @@
     *****************************************************************************/
     class MfgImage
     {
-        public  static  PLAYER1_LEFT            :string                 = "res/image/standLeft.png";
-        public  static  PLAYER1_RIGHT           :string                 = "res/image/standRight.png";
-        public  static  PLAYER1_WALK_LEFT       :string                 = "res/image/walkLeft.png";
-        public  static  PLAYER1_WALK_RIGHT      :string                 = "res/image/walkRight.png";
-        public  static  ITEM_MAYFLOWER_STATIC   :string                 = "res/image/itemStatic.png";
-        public  static  ITEM_MAYFLOWER_SPRITE   :string                 = "res/image/itemSprite.png";
+        public  static  PLAYER1_LEFT            :string                 = "res/image/player/standLeft.png";
+        public  static  PLAYER1_RIGHT           :string                 = "res/image/player/standRight.png";
+        public  static  PLAYER1_WALK_LEFT       :string                 = "res/image/player/walkLeft.png";
+        public  static  PLAYER1_WALK_RIGHT      :string                 = "res/image/player/walkRight.png";
+        public  static  ITEM_MAYFLOWER_STATIC   :string                 = "res/image/item/mfLogoStatic.png";
+        public  static  ITEM_MAYFLOWER_SPRITE   :string                 = "res/image/item/mfLogoSprite.png";
 
         private static  FILENAMES               :Array<string>          =
         [
