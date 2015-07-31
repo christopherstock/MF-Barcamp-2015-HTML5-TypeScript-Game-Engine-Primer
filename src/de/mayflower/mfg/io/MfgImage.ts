@@ -13,7 +13,7 @@
         public  static  PLAYER_WALK_RIGHT           :string                 = "res/image/player/walkRight.png";
         public  static  ITEM_MAYFLOWER_STATIC       :string                 = "res/image/item/mfLogoStatic.png";
         public  static  ITEM_MAYFLOWER_SPRITE       :string                 = "res/image/item/mfLogoSprite.png";
-        public  static  LEVEL_BG_ZAUBERWALD         :string                 = "res/image/level/bgZauberwald_DEBUG.jpg";
+        public  static  LEVEL_BG_ZAUBERWALD         :string                 = "res/image/level/bgZauberwald.jpg";
 
         private static  FILENAMES               :Array<string>          =
         [
