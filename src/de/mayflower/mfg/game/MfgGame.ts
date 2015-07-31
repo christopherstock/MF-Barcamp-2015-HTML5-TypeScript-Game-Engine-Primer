@@ -13,6 +13,8 @@
         /** The player object. */
         public      static      player              :MfgPlayer                  = null;
 
+        public      static      player1             :HTMLImageElement           = null;
+
         /*****************************************************************************
         *   Inits the game engine.
         *****************************************************************************/
@@ -28,14 +30,12 @@
             //create player instance
             MfgGame.player = new MfgPlayer( 40, 80, 60, 150 );
 
+            MfgImage.loadImage(MfgGame.initRest);
+        }
 
-            //try drawing an image
-            var imageZelda = new Image();
-            imageZelda.src = "res/image/player1.png";
-            imageZelda.onload=function(){
-                MfgGame.canvas.getContext().drawImage( imageZelda, 0, 0 );
-            };
-
+        private static initRest():void
+        {
+            MfgGame.player1 = MfgImage.getImage();
 
             //init key system
             LibKeySystem.init();

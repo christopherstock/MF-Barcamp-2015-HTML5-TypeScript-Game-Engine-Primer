@@ -10,4 +10,5 @@
 /// <reference path="src/de/mayflower/mfg/MfgSettings.ts" />
 /// <reference path="src/de/mayflower/mfg/game/MfgGame.ts" />
 /// <reference path="src/de/mayflower/mfg/ui/MfgCanvas.ts" />
+/// <reference path="src/de/mayflower/mfg/io/MfgImage.ts" />
 /// <reference path="src/de/mayflower/mfg/game/MfgPlayer.ts" />
