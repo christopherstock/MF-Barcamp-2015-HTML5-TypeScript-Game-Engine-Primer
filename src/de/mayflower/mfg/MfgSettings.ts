@@ -47,9 +47,9 @@
         public          static          PLAYER_START_Y          :number             = 0;
 
         /** Level width. */
-        public          static          LEVEL_WIDTH             :number             = 400;
+        public          static          LEVEL_WIDTH             :number             = 2000;
         /** Level height. */
-        public          static          LEVEL_HEIGHT            :number             = 250;
+        public          static          LEVEL_HEIGHT            :number             = 1250;
         /** Level border size. */
         public          static          LEVEL_BORDER_SIZE       :number             = 5;
 

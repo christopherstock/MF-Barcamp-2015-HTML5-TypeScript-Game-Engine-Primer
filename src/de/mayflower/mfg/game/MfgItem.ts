@@ -213,7 +213,6 @@
                     MfgGame.items[ i ].getY(),
                     MfgGame.items[ i ].alpha
                 );
-
             }
         }
     }

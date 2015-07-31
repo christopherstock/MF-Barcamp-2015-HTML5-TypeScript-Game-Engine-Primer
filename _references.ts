@@ -8,6 +8,7 @@
 /// <reference path="src/de/mayflower/mfg/game/MfgLevel.ts" />
 /// <reference path="src/de/mayflower/mfg/ui/MfgCanvas.ts" />
 /// <reference path="src/de/mayflower/mfg/ui/MfgSprite.ts" />
+/// <reference path="src/de/mayflower/mfg/ui/MfgCamera.ts" />
 /// <reference path="src/de/mayflower/mfg/io/MfgImage.ts" />
 /// <reference path="src/de/mayflower/mfg/io/MfgSound.ts" />
 /// <reference path="src/de/mayflower/mfg/game/MfgPlayer.ts" />
