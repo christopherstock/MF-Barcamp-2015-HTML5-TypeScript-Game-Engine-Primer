@@ -2,9 +2,8 @@
     /*****************************************************************************
     *   The main class contains the application's points of entry and termination.
     *
-    *   TODO HIGH   Picked up items shall fade out.
     *   TODO HIGH   Scrolling level background.
-    *   TODO HIGH   Player points.
+    *
     *   TODO HIGH   Sprite system.
     *   TODO LOW    Sound system.
     *

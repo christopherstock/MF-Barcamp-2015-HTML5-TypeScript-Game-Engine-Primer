@@ -118,6 +118,10 @@
                 if ( this.collidesWithPlayer( MfgGame.player ) )
                 {
                     this.pickedUp = true;
+
+                    MfgDebug.log( "Picked up item with point value [" + this.points + "]" );
+                    MfgGame.player.increasePoints( this.points );
+                    MfgDebug.log( "Player's point account is now [" + MfgGame.player.getPoints() + "]" );
                 }
             }
         }

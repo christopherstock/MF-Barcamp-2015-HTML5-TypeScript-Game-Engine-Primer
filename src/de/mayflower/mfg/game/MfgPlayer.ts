@@ -15,6 +15,8 @@
         private     width           :number             = 0;
         /** Player's height. */
         private     height          :number             = 0;
+        /** Current point count. */
+        private     points          :number             = 0;
 
         /*****************************************************************************
         *   Creates a player instance.
@@ -110,6 +112,16 @@
         public setHeight( height:number )
         {
             this.height = height;
+        }
+
+        public getPoints():number
+        {
+            return this.points;
+        }
+
+        public increasePoints( delta:number )
+        {
+            this.points += delta;
         }
 
         public static draw( ctx:CanvasRenderingContext2D )
