@@ -8,8 +8,8 @@
     class MfgCamera
     {
         /** The scrolling offset X. */
-        public          static          offsetX         :number                         = 10;
+        public          static          offsetX         :number                         = 0;
 
         /** The scrolling offset Y. */
-        public          static          offsetY         :number                         = 20;
+        public          static          offsetY         :number                         = 0;
     }
