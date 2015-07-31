@@ -31,4 +31,9 @@
             ctx.fillStyle = color;
             ctx.fillRect( x, y, width, height );
         }
+
+        public static drawImage(ctx:CanvasRenderingContext2D, img:HTMLImageElement, x:number, y:number)
+        {
+            ctx.drawImage(img, x, y);
+        }
     }
