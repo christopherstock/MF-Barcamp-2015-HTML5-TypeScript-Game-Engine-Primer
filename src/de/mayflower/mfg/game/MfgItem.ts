@@ -48,6 +48,7 @@ class MfgItem
     {
         var itemList = new Array<MfgItem>();
 
+        /*
         while(true) {
             var newX   = LibMath.generateRandomNumber(0, MfgGame.canvas.getWidth());
             var newY   = LibMath.generateRandomNumber(0, MfgGame.canvas.getHeight());
@@ -68,6 +69,8 @@ class MfgItem
                 return itemList;
             }
         }
+        */
+        return itemList;
     }
 
     /**
