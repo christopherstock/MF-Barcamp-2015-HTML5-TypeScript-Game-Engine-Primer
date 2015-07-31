@@ -1,152 +1,160 @@
-/*****************************************************************************
- *   Represents a collectable item.
- *
- *   @author     C. Heldt
- *   @version    0.0.1
- *****************************************************************************/
-class MfgItem
-{
-    /** Location X. */
-    private            x               :number             = 0;
-    /** Location Y. */
-    private            y               :number             = 0;
-    /** Points gained by player if collected */
-    private            points          :number             = 0;
-    /** Flag, which indicates if item is picked up by player */
-    private            pickedUp        :boolean            = false;
-    /** Current alpha-color-value of item */
-    private            alpha           :number             = 1;
 
-    /**
-     * @param x
-     * @param y
-     * @param points
-     */
-    constructor(x:number, y:number, points:number)
+    /*****************************************************************************
+    *   Represents a collectable item.
+    *
+    *   @author     C. Heldt
+    *   @version    0.0.1
+    *****************************************************************************/
+    class MfgItem
     {
-        this.x = x;
-        this.y = y;
-        this.points = points;
-    }
+        /** Location X. */
+        private            x               :number             = 0;
+        /** Location Y. */
+        private            y               :number             = 0;
+        /** Points gained by player if collected */
+        private            points          :number             = 0;
+        /** Flag, which indicates if item is picked up by player */
+        private            pickedUp        :boolean            = false;
+        /** Current alpha-color-value of item */
+        private            alpha           :number             = 1;
 
-    /**
-     * @return {number}
-     */
-    public getX():number
-    {
-        return this.x;
-    }
-
-    /**
-     * @return {number}
-     */
-    public getY():number
-    {
-        return this.y;
-    }
-
-    /**
-     * @return {boolean}
-     */
-    public getPickedUp():boolean
-    {
-        return this.pickedUp;
-    }
-
-    /**
-     * @param pickedUp
-     */
-    public setPickedUp(pickedUp:boolean)
-    {
-        this.pickedUp = pickedUp;
-    }
-
-    /**
-     * @return {number}
-     */
-    public getAlpha():number
-    {
-        return this.alpha;
-    }
-
-    /**
-     * @param alpha
-     */
-    public setAlpha(alpha:number)
-    {
-        this.alpha = alpha;
-    }
-
-    /**
-     * @return {MfgItem[]}
-     */
-    public static generateRandomItems():Array<MfgItem>
-    {
-        var itemList = new Array<MfgItem>();
-
-        for(var listIndex:number = 0; listIndex < MfgSettings.ITEM_COUNT; listIndex++) {
-            var newX   = LibMath.generateRandomNumber(0, MfgSettings.LEVEL_WIDTH);
-            var newY   = LibMath.generateRandomNumber(0, MfgSettings.LEVEL_HEIGHT);
-            var points = LibMath.generateRandomNumber(
-                MfgSettings.MIN_ITEM_POINS,
-                MfgSettings.MAX_ITEM_POINS
-            );
-
-            itemList.push(new MfgItem(newX, newY, points));
-        }
-
-        return itemList;
-    }
-
-    /**
-     * Checks of player collides with item
-     *
-     * @param player
-     * @return {boolean}
-     */
-    public collidesWithPlayer( player:MfgPlayer ):boolean
-    {
-        return (
-                player.getX() + player.getWidth()  >= this.x
-            &&  player.getY() + player.getHeight() >= this.y
-            &&  player.getX()                      <= this.x + MfgSettings.ITEM_WIDTH
-            &&  player.getY()                      <= this.y + MfgSettings.ITEM_HEIGHT
-        );
-    }
-
-    /**
-     * Changes the alpha-color-value
-     */
-    public fadeOut()
-    {
-        if (this.alpha == 0) {
-            return;
-        }
-
-        if (this.alpha > 0) {
-            this.alpha --;
-        }
-    }
-
-    /**
-     * @param ctx
-     */
-    public static drawAll(ctx:CanvasRenderingContext2D)
-    {
-        for ( var i:number = 0; i < MfgGame.items.length; ++i )
+        /**
+         * @param x
+         * @param y
+         * @param points
+         */
+        constructor(x:number, y:number, points:number)
         {
-            if (MfgGame.items[i].getAlpha() == 0) {
-                continue;
+            this.x = x;
+            this.y = y;
+            this.points = points;
+        }
+
+        /**
+         * @return {number}
+         */
+        public getX():number
+        {
+            return this.x;
+        }
+
+        /**
+         * @return {number}
+         */
+        public getY():number
+        {
+            return this.y;
+        }
+
+        /**
+         * @return {boolean}
+         */
+        public getPickedUp():boolean
+        {
+            return this.pickedUp;
+        }
+
+        /**
+         * @param pickedUp
+         */
+        public setPickedUp(pickedUp:boolean)
+        {
+            this.pickedUp = pickedUp;
+        }
+
+        /**
+         * @return {number}
+         */
+        public getAlpha():number
+        {
+            return this.alpha;
+        }
+
+        /**
+         * @param alpha
+         */
+        public setAlpha(alpha:number)
+        {
+            this.alpha = alpha;
+        }
+
+        /**
+         * @return {MfgItem[]}
+         */
+        public static generateRandomItems():Array<MfgItem>
+        {
+            var itemList = new Array<MfgItem>();
+
+            for(var listIndex:number = 0; listIndex < MfgSettings.ITEM_COUNT; listIndex++) {
+                var newX   = LibMath.generateRandomNumber(0, MfgSettings.LEVEL_WIDTH);
+                var newY   = LibMath.generateRandomNumber(0, MfgSettings.LEVEL_HEIGHT);
+                var points = LibMath.generateRandomNumber(
+                    MfgSettings.MIN_ITEM_POINS,
+                    MfgSettings.MAX_ITEM_POINS
+                );
+
+                itemList.push(new MfgItem(newX, newY, points));
             }
 
-            LibDrawing.fillRect(
-                ctx,
-                MfgSettings.COLOR_ITEM,
-                MfgGame.items[ i ].getX(),
-                MfgGame.items[ i ].getY(),
-                MfgSettings.ITEM_WIDTH,
-                MfgSettings.ITEM_HEIGHT
+            return itemList;
+        }
+
+        /**
+         * Checks of player collides with item
+         *
+         * @param player
+         * @return {boolean}
+         */
+        public collidesWithPlayer( player:MfgPlayer ):boolean
+        {
+            return (
+                    player.getX() + player.getWidth()  >= this.x
+                &&  player.getY() + player.getHeight() >= this.y
+                &&  player.getX()                      <= this.x + MfgSettings.ITEM_WIDTH
+                &&  player.getY()                      <= this.y + MfgSettings.ITEM_HEIGHT
             );
         }
+
+        /**
+         * Changes the alpha-color-value
+         */
+        public fadeOut()
+        {
+            if (this.alpha == 0) {
+                return;
+            }
+
+            if (this.alpha > 0) {
+                this.alpha --;
+            }
+        }
+
+        /**
+         * @param ctx
+         */
+        public static drawAll(ctx:CanvasRenderingContext2D)
+        {
+            for ( var i:number = 0; i < MfgGame.items.length; ++i )
+            {
+                if (MfgGame.items[i].getAlpha() == 0) {
+                    continue;
+                }
+
+                LibDrawing.fillRect(
+                    ctx,
+                    MfgSettings.COLOR_ITEM,
+                    MfgGame.items[ i ].getX(),
+                    MfgGame.items[ i ].getY(),
+                    MfgSettings.ITEM_WIDTH,
+                    MfgSettings.ITEM_HEIGHT
+                );
+
+                LibDrawing.drawImage(
+                    ctx,
+                    MfgImage.getImage( MfgImage.ITEM_MAYFLOWER_STATIC ),
+                    MfgGame.items[ i ].getX(),
+                    MfgGame.items[ i ].getY()
+                );
+            }
+        }
     }
-}
