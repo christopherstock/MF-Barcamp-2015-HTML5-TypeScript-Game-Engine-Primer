@@ -79,7 +79,7 @@
             //clear the canvas
             LibDrawing.fillRect(
                 ctx,
-                MfgSettings.COLOR_BG,
+                MfgSettings.COLOR_BG_CANVAS,
                 0,
                 0,
                 MfgGame.canvas.getWidth(),
@@ -89,7 +89,7 @@
             //draw the level
             LibDrawing.fillRect(
                 ctx,
-                MfgSettings.COLOR_BACKGROUND_LEVEL,
+                MfgSettings.COLOR_BG_LEVEL,
                 0,
                 0,
                 MfgSettings.LEVEL_WIDTH,

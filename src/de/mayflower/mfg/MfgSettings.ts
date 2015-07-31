@@ -14,10 +14,13 @@
 
         /** The color of the player. */
         public          static          COLOR_PLAYER            :string             = "rgba( 255, 0, 0, 1.0 )";
-        /** The color of the player. */
-        public          static          COLOR_BG                :string             = "rgba( 0,   0, 0, 1.0  )";
+        /** The color of the canvas. */
+        public          static          COLOR_BG_CANVAS         :string             = "rgba( 0,   0, 0, 1.0  )";
+        /** Level background color */
+        public          static          COLOR_BG_LEVEL          :string            = "rgba( 0, 255, 128, 1.0 )";
         /** The color of a collectable item. */
         public          static          COLOR_ITEM              :string             = "green";
+
 
         /** The delay of the game. The less this variable is set the faster runs the game. */
         public          static          THREAD_DELAY            :number             = 40;
@@ -45,7 +48,6 @@
         public          static          LEVEL_WIDTH             :number            = 400;
         /** Level height. */
         public          static          LEVEL_HEIGHT            :number            = 250;
-        /**Level background color */
-        public          static          COLOR_BACKGROUND_LEVEL  :string            = "rgba( 0, 255, 128, 1.0 )";
+
 
     }
