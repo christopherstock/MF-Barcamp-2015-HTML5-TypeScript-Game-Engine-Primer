@@ -48,8 +48,7 @@ class MfgItem
     {
         var itemList = new Array<MfgItem>();
 
-        /*
-        while(true) {
+        for(var listIndex:number = 0; listIndex < MfgSettings.ITEM_COUNT; listIndex++) {
             var newX   = LibMath.generateRandomNumber(0, MfgGame.canvas.getWidth());
             var newY   = LibMath.generateRandomNumber(0, MfgGame.canvas.getHeight());
             var points = LibMath.generateRandomNumber(
@@ -57,19 +56,9 @@ class MfgItem
                 MfgSettings.MAX_ITEM_POINS
             );
 
-            var newItem = new MfgItem(newX, newY, points);
-
-            for(var i:number = 0; i < itemList.length; i++) {
-                if (!newItem.collidesWithItem(itemList[i])) {
-                    itemList.push(newItem);
-                }
-            }
-
-            if (itemList.length == MfgSettings.ITEM_COUNT) {
-                return itemList;
-            }
+            itemList.push(new MfgItem(newX, newY, points));
         }
-        */
+
         return itemList;
     }
 
