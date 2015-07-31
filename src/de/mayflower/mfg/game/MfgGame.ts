@@ -13,8 +13,6 @@
         /** The player object. */
         public      static      player              :MfgPlayer                  = null;
 
-        public      static      player1             :HTMLImageElement           = null;
-
         /** List of collectable items */
         public      static      items               :Array<MfgItem>             = null;
 
@@ -37,6 +35,9 @@
             MfgImage.loadImage(MfgGame.initRest);
         }
 
+        /*****************************************************************************
+        *   Inits all game components after all images have been invoked.
+        *****************************************************************************/
         private static initRest():void
         {
             //create player instance
@@ -95,14 +96,11 @@
             );
 
             //draw the level
-            LibDrawing.fillRect(
-                ctx,
-                MfgSettings.COLOR_BG_LEVEL,
-                0,
-                0,
-                MfgSettings.LEVEL_WIDTH,
-                MfgSettings.LEVEL_HEIGHT
-            );
+            LibDrawing.fillRect( ctx, MfgSettings.COLOR_BG_LEVEL,     0, 0, MfgSettings.LEVEL_WIDTH, MfgSettings.LEVEL_HEIGHT      );
+            LibDrawing.fillRect( ctx, MfgSettings.COLOR_BORDER_LEVEL, 0, 0, MfgSettings.LEVEL_WIDTH, MfgSettings.LEVEL_BORDER_SIZE );
+            LibDrawing.fillRect( ctx, MfgSettings.COLOR_BORDER_LEVEL, 0, MfgSettings.LEVEL_HEIGHT - MfgSettings.LEVEL_BORDER_SIZE, MfgSettings.LEVEL_WIDTH, MfgSettings.LEVEL_BORDER_SIZE );
+            LibDrawing.fillRect( ctx, MfgSettings.COLOR_BORDER_LEVEL, 0, 0, MfgSettings.LEVEL_BORDER_SIZE, MfgSettings.LEVEL_HEIGHT );
+            LibDrawing.fillRect( ctx, MfgSettings.COLOR_BORDER_LEVEL, MfgSettings.LEVEL_WIDTH - MfgSettings.LEVEL_BORDER_SIZE, 0, MfgSettings.LEVEL_BORDER_SIZE, MfgSettings.LEVEL_HEIGHT );
 
             //draw the player
             LibDrawing.fillRect(

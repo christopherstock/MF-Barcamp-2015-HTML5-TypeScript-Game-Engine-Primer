@@ -17,7 +17,9 @@
         /** The color of the canvas. */
         public          static          COLOR_BG_CANVAS         :string             = "rgba( 100, 100, 100, 1.0 )";
         /** Level background color */
-        public          static          COLOR_BG_LEVEL          :string             = "rgba( 0,   255, 128, 1.0 )";
+        public          static          COLOR_BG_LEVEL          :string             = "rgba( 0,   200, 100, 1.0 )";
+        /** Level border color */
+        public          static          COLOR_BORDER_LEVEL      :string             = "rgba( 255, 255, 0,   1.0 )";
         /** The color of a collectable item. */
         public          static          COLOR_ITEM              :string             = "rgba( 0,   255, 0,   1.0 )";
 
@@ -48,11 +50,14 @@
         public          static          LEVEL_WIDTH             :number             = 400;
         /** Level height. */
         public          static          LEVEL_HEIGHT            :number             = 250;
+        /** Level border size. */
+        public          static          LEVEL_BORDER_SIZE       :number             = 5;
 
         /** The minimum points for collectable items */
         public          static          MIN_ITEM_POINS          :number             = 10;
         /** The maximum points for collectable items */
         public          static          MAX_ITEM_POINS          :number             = 100;
+
         /** Maximum numbers of collectable items */
         public          static          ITEM_COUNT              :number             = 10;
         /** Item's width. */
