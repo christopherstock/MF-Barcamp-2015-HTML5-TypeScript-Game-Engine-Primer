@@ -1,0 +1,3 @@
+#!/bin/sh
+cd ${0%/*}
+node _ASSETS/tools/typedoc/bin/typedoc --includeDeclarations --externalPattern **/lib/** --mode file --name "HTML5 TypeScript Game Engine Primer Documentation" --out doc/ src/ src_lib/

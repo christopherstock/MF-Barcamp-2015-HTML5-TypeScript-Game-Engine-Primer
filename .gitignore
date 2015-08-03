@@ -19,3 +19,4 @@ node_modules
 *.map
 /src/de/mayflower/mfg/MfgDebug.js.map
 /src/de/mayflower/mfg/ui/MfgCanvas.js.map
+doc

@@ -1,0 +1,17 @@
+.DS_Store
+.idea
+.tscache
+.baseDir.js
+.baseDir.ts
+
+/src/lib/typescript/tsc.js
+
+/tmp/
+/etc/
+/examples/*/doc
+/examples/definitely-typed/src/
+/examples/plottable/src/
+/examples/doppio/src/
+/node_modules/
+/typescript/
+/coverage/
