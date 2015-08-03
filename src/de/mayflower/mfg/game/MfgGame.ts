@@ -16,6 +16,9 @@
         /** List of collectable items */
         public      static      items               :Array<MfgItem>             = null;
 
+        /** Flags all items being picked. */
+        public      static      gameOver            :boolean                    = false;
+
         /*****************************************************************************
         *   Inits the game engine.
         *****************************************************************************/
@@ -71,8 +74,8 @@
         *****************************************************************************/
         public static tick():void
         {
-            MfgGame.render();
-            MfgGame.draw( MfgGame.canvas.getContext() );
+            if ( !MfgGame.gameOver ) MfgGame.render();
+            if ( !MfgGame.gameOver ) MfgGame.draw( MfgGame.canvas.getContext() );
         }
 
         /*****************************************************************************
@@ -122,13 +125,17 @@
             if ( MfgGame.player.getY() < 0 ) MfgGame.player.setY( 0 );
 
             //render items
-            for ( var i:number = 0; i < MfgGame.items.length; i++ )
-            {
-                MfgGame.items[ i ].render();
-            }
+            MfgItem.renderAll();
 
             //render camera
             MfgCamera.update();
+
+            //check if all items have been picked
+            if ( !MfgGame.gameOver && MfgItem.checkAllPicked() )
+            {
+                MfgGame.gameOver = true;
+                alert( "Congratulations on picking up all items! :D" );
+            }
         }
 
         /*****************************************************************************

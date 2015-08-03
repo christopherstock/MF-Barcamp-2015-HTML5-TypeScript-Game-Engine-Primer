@@ -198,4 +198,24 @@
                 );
             }
         }
+
+        public static renderAll():void
+        {
+            for ( var i:number = 0; i < MfgGame.items.length; i++ )
+            {
+                MfgGame.items[ i ].render();
+            }
+        }
+
+        public static checkAllPicked():boolean
+        {
+            for ( var i:number = 0; i < MfgGame.items.length; i++ )
+            {
+                if ( !MfgGame.items[ i ].pickedUp )
+                {
+                    return false;
+                }
+            }
+            return true;
+        }
     }
