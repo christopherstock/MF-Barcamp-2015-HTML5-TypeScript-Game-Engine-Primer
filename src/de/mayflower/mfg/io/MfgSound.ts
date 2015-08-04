@@ -24,7 +24,15 @@
             //load all sounds
             for ( var i:number = 0; i < MfgSound.FILENAMES.length; ++i )
             {
-                MfgSound.allSounds[ MfgSound.FILENAMES[ i ] ] = new Audio( MfgSound.FILENAMES[ i ] );
+                try
+                {
+                    MfgSound.allSounds[MfgSound.FILENAMES[i]] = new Audio();
+                    MfgSound.allSounds[MfgSound.FILENAMES[i]].src = MfgSound.FILENAMES[i];
+                }
+                catch ( ex )
+                {
+                    MfgDebug.log("Exception raised on loading sound [" + MfgSound.FILENAMES[i] + "]");
+                }
             }
         }
 
@@ -35,7 +43,10 @@
         *****************************************************************************/
         public static playSound( id:string )
         {
-            var clipClone:HTMLAudioElement = <HTMLAudioElement>MfgSound.allSounds[ id ].cloneNode( true );
-            clipClone.play();
+            if ( MfgSound.allSounds[ id ] != null )
+            {
+                var clipClone:HTMLAudioElement = <HTMLAudioElement>MfgSound.allSounds[id].cloneNode(true);
+                clipClone.play();
+            }
         }
     }
