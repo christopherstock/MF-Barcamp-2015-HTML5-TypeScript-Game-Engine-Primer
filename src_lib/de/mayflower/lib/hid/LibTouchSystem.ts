@@ -25,28 +25,34 @@
         {
             document.addEventListener( "touchdown", function( e:MouseEvent )
             {
+//                e.preventDefault();
                 LibTouchSystem.touchDown( e );
             }, false );
             document.addEventListener( "mousedown", function( e:MouseEvent )
             {
+//                e.preventDefault();
                 LibTouchSystem.touchDown( e );
             }, false );
 
             document.addEventListener( "touchup", function( e:MouseEvent )
             {
+//                e.preventDefault();
                 LibTouchSystem.touchUp( e );
             }, false );
             document.addEventListener( "mouseup", function( e:MouseEvent )
             {
+//                e.preventDefault();
                 LibTouchSystem.touchUp( e );
             }, false );
 
             document.addEventListener( "touchmove", function( e:MouseEvent )
             {
+//                e.preventDefault();
                 LibTouchSystem.touchMove( e );
             }, false );
             document.addEventListener( "mousemove", function( e:MouseEvent )
             {
+//                e.preventDefault();
                 LibTouchSystem.touchMove( e );
             }, false );
         }
