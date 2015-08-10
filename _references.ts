@@ -1,5 +1,6 @@
 /// <reference path="src_lib/de/mayflower/lib/ui/LibDrawing.ts" />
 /// <reference path="src_lib/de/mayflower/lib/hid/LibKeySystem.ts" />
+/// <reference path="src_lib/de/mayflower/lib/hid/LibTouchSystem.ts" />
 /// <reference path="src_lib/de/mayflower/lib/util/LibMath.ts" />
 /// <reference path="src/de/mayflower/mfg/MfgDebug.ts" />
 /// <reference path="src/de/mayflower/mfg/Mfg.ts" />

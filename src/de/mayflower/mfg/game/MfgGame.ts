@@ -62,6 +62,9 @@
             //init key system
             LibKeySystem.init();
 
+            //init touch system
+            LibTouchSystem.init();
+
             //start the bg sound
             MfgSound.playSound( MfgSound.BG_ENCHANTED_WOODS );
 
@@ -88,23 +91,27 @@
             MfgSprite.PLAYER_WALK_LEFT.nextTick();
             MfgSprite.PLAYER_WALK_RIGHT.nextTick();
 
+            var moveLeft:boolean  = LibKeySystem.isKeyPressed( MfgSettings.KEY_LEFT  ) || LibTouchSystem.activeGestureLeft();
+            var moveRight:boolean = LibKeySystem.isKeyPressed( MfgSettings.KEY_RIGHT ) || LibTouchSystem.activeGestureRight();
+            var moveUp:boolean    = LibKeySystem.isKeyPressed( MfgSettings.KEY_UP    ) || LibTouchSystem.activeGestureUp();
+            var moveDown:boolean  = LibKeySystem.isKeyPressed( MfgSettings.KEY_DOWN  ) || LibTouchSystem.activeGestureDown();
 
-            if ( LibKeySystem.isKeyPressed( MfgSettings.KEY_RIGHT ) )
+            if ( moveRight )
             {
                 MfgGame.player.setNewSprite(MfgSprite.PLAYER_WALK_RIGHT);
                 MfgGame.player.setX( MfgGame.player.getX() + MfgSettings.PLAYER_SPEED );
                 MfgGame.player.lookingdirection = MfgPlayer.LOOKINGDIRECTION_RIGHT;
             }
-            if ( LibKeySystem.isKeyPressed( MfgSettings.KEY_LEFT  ) )
+            if ( moveLeft )
             {
                 MfgGame.player.setNewSprite(MfgSprite.PLAYER_WALK_LEFT);
                 MfgGame.player.setX( MfgGame.player.getX() - MfgSettings.PLAYER_SPEED );
                 MfgGame.player.lookingdirection = MfgPlayer.LOOKINGDIRECTION_LEFT;
             }
-            if ( LibKeySystem.isKeyPressed( MfgSettings.KEY_UP    ) ) MfgGame.player.setY( MfgGame.player.getY() - MfgSettings.PLAYER_SPEED );
-            if ( LibKeySystem.isKeyPressed( MfgSettings.KEY_DOWN  ) ) MfgGame.player.setY( MfgGame.player.getY() + MfgSettings.PLAYER_SPEED );
+            if ( moveUp   ) MfgGame.player.setY( MfgGame.player.getY() - MfgSettings.PLAYER_SPEED );
+            if ( moveDown ) MfgGame.player.setY( MfgGame.player.getY() + MfgSettings.PLAYER_SPEED );
 
-            if (!LibKeySystem.isKeyPressed( MfgSettings.KEY_LEFT  ) && !LibKeySystem.isKeyPressed( MfgSettings.KEY_RIGHT  ))
+            if (!moveLeft && !moveRight)
             {
                 if (MfgGame.player.lookingdirection == MfgPlayer.LOOKINGDIRECTION_RIGHT) MfgGame.player.setNewSprite(MfgSprite.PLAYER_STAND_RIGHT);
                 if (MfgGame.player.lookingdirection == MfgPlayer.LOOKINGDIRECTION_LEFT) MfgGame.player.setNewSprite(MfgSprite.PLAYER_STAND_LEFT);
@@ -114,13 +121,13 @@
             if ( MfgGame.player.getX() >= MfgSettings.LEVEL_WIDTH  - MfgGame.player.getWidth()  )
             {
                 MfgGame.player.setX( MfgSettings.LEVEL_WIDTH  - MfgGame.player.getWidth()  );
-                if (LibKeySystem.isKeyPressed( MfgSettings.KEY_RIGHT  )) MfgGame.player.setNewSprite(MfgSprite.PLAYER_STAND_RIGHT);
+                if (moveRight) MfgGame.player.setNewSprite(MfgSprite.PLAYER_STAND_RIGHT);
             }
             if ( MfgGame.player.getY() >= MfgSettings.LEVEL_HEIGHT - MfgGame.player.getHeight() ) MfgGame.player.setY( MfgSettings.LEVEL_HEIGHT - MfgGame.player.getHeight() );
             if ( MfgGame.player.getX() < 0 )
             {
                 MfgGame.player.setX( 0 );
-                if (LibKeySystem.isKeyPressed( MfgSettings.KEY_LEFT )) MfgGame.player.setNewSprite(MfgSprite.PLAYER_STAND_LEFT);
+                if (moveLeft) MfgGame.player.setNewSprite(MfgSprite.PLAYER_STAND_LEFT);
             }
             if ( MfgGame.player.getY() < 0 ) MfgGame.player.setY( 0 );
 
