@@ -17,15 +17,15 @@
         {
             LibKeySystem.keys = new Array<boolean>();
 
-            window.onkeydown = function( e )
+            document.addEventListener( "keydown", function( e )
             {
                 LibKeySystem.keys[ e.keyCode ] = true;
-            };
+            }, false );
 
-            window.onkeyup = function( e )
+            document.addEventListener( "keyup", function( e )
             {
                 LibKeySystem.keys[ e.keyCode ] = false;
-            };
+            }, false );
         }
 
         /*****************************************************************************

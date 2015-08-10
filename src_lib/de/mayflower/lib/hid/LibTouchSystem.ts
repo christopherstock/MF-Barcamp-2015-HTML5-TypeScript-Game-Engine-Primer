@@ -23,47 +23,32 @@
         *****************************************************************************/
         public static init()
         {
-            window.ontouchdown = function( e )
+            document.addEventListener( "touchdown", function( e:MouseEvent )
             {
-                LibTouchSystem.touchPressed = true;
-
-                LibTouchSystem.gestureUp    = false;
-                LibTouchSystem.gestureDown  = false;
-                LibTouchSystem.gestureLeft  = false;
-                LibTouchSystem.gestureRight = false;
-            };
-
-            window.ontouchup = function( e )
+                LibTouchSystem.touchDown( e );
+            }, false );
+            document.addEventListener( "mousedown", function( e:MouseEvent )
             {
-                LibTouchSystem.touchPressed = false;
+                LibTouchSystem.touchDown( e );
+            }, false );
 
-                LibTouchSystem.gestureUp    = false;
-                LibTouchSystem.gestureDown  = false;
-                LibTouchSystem.gestureLeft  = false;
-                LibTouchSystem.gestureRight = false;
-            };
-
-            window.ontouchmove = function( e )
+            document.addEventListener( "touchup", function( e:MouseEvent )
             {
-                if ( LibTouchSystem.touchPressed )
-                {
-                    console.log( "onTouchMove [" + e.screenX + "][" + e.screenY + "]" );
+                LibTouchSystem.touchUp( e );
+            }, false );
+            document.addEventListener( "mouseup", function( e:MouseEvent )
+            {
+                LibTouchSystem.touchUp( e );
+            }, false );
 
-                    if ( LibTouchSystem.lastX != -1 )
-                    {
-                        LibTouchSystem.gestureLeft  = ( e.screenX < LibTouchSystem.lastX );
-                        LibTouchSystem.gestureRight = ( e.screenX > LibTouchSystem.lastX );
-                    }
-                    LibTouchSystem.lastX = e.screenX;
-
-                    if ( LibTouchSystem.lastY != -1 )
-                    {
-                        LibTouchSystem.gestureUp   = ( e.screenY < LibTouchSystem.lastY );
-                        LibTouchSystem.gestureDown = ( e.screenY > LibTouchSystem.lastY );
-                    }
-                    LibTouchSystem.lastY = e.screenY;
-                }
-            };
+            document.addEventListener( "touchmove", function( e:MouseEvent )
+            {
+                LibTouchSystem.touchMove( e );
+            }, false );
+            document.addEventListener( "mousemove", function( e:MouseEvent )
+            {
+                LibTouchSystem.touchMove( e );
+            }, false );
         }
 
         /*****************************************************************************
@@ -108,5 +93,47 @@
         public static activeGestureRight()
         {
             return LibTouchSystem.gestureRight;
+        }
+
+        public static touchDown( e:MouseEvent )
+        {
+            LibTouchSystem.touchPressed = true;
+
+            LibTouchSystem.gestureUp    = false;
+            LibTouchSystem.gestureDown  = false;
+            LibTouchSystem.gestureLeft  = false;
+            LibTouchSystem.gestureRight = false;
+        }
+
+        public static touchUp( e:MouseEvent )
+        {
+            LibTouchSystem.touchPressed = false;
+
+            LibTouchSystem.gestureUp    = false;
+            LibTouchSystem.gestureDown  = false;
+            LibTouchSystem.gestureLeft  = false;
+            LibTouchSystem.gestureRight = false;
+        }
+
+        public static touchMove( e:MouseEvent )
+        {
+            if ( LibTouchSystem.touchPressed )
+            {
+                //console.log( "onTouchMove [" + e.screenX + "][" + e.screenY + "]" );
+
+                if ( LibTouchSystem.lastX != -1 )
+                {
+                    LibTouchSystem.gestureLeft  = ( e.screenX < LibTouchSystem.lastX );
+                    LibTouchSystem.gestureRight = ( e.screenX > LibTouchSystem.lastX );
+                }
+                LibTouchSystem.lastX = e.screenX;
+
+                if ( LibTouchSystem.lastY != -1 )
+                {
+                    LibTouchSystem.gestureUp   = ( e.screenY < LibTouchSystem.lastY );
+                    LibTouchSystem.gestureDown = ( e.screenY > LibTouchSystem.lastY );
+                }
+                LibTouchSystem.lastY = e.screenY;
+            }
         }
     }
