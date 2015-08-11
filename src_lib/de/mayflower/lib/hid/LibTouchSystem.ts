@@ -23,36 +23,51 @@
         *****************************************************************************/
         public static init()
         {
+            //touch events will not work properly :(
+            if ( true ) return;
+
             document.addEventListener( "touchdown", function( e:MouseEvent )
             {
-//                e.preventDefault();
+//alert("TouchDown being invoked");
+
+                e.preventDefault();
                 LibTouchSystem.touchDown( e );
             }, false );
             document.addEventListener( "mousedown", function( e:MouseEvent )
             {
-//                e.preventDefault();
+//alert("MouseDown being invoked");
+
+                e.preventDefault();
                 LibTouchSystem.touchDown( e );
             }, false );
 
             document.addEventListener( "touchup", function( e:MouseEvent )
             {
-//                e.preventDefault();
+//alert("TouchUp being invoked");
+
+                e.preventDefault();
                 LibTouchSystem.touchUp( e );
             }, false );
             document.addEventListener( "mouseup", function( e:MouseEvent )
             {
-//                e.preventDefault();
+//alert("MouseUp being invoked");
+
+                e.preventDefault();
                 LibTouchSystem.touchUp( e );
             }, false );
 
             document.addEventListener( "touchmove", function( e:MouseEvent )
             {
-//                e.preventDefault();
+//alert("TouchMove being invoked");
+
+                e.preventDefault();
                 LibTouchSystem.touchMove( e );
             }, false );
             document.addEventListener( "mousemove", function( e:MouseEvent )
             {
-//                e.preventDefault();
+//alert("MouseMove being invoked");
+
+                e.preventDefault();
                 LibTouchSystem.touchMove( e );
             }, false );
         }
@@ -101,7 +116,7 @@
             return LibTouchSystem.gestureRight;
         }
 
-        public static touchDown( e:MouseEvent )
+        public static touchDown( e )
         {
             LibTouchSystem.touchPressed = true;
 
@@ -111,7 +126,7 @@
             LibTouchSystem.gestureRight = false;
         }
 
-        public static touchUp( e:MouseEvent )
+        public static touchUp( e )
         {
             LibTouchSystem.touchPressed = false;
 
@@ -121,7 +136,7 @@
             LibTouchSystem.gestureRight = false;
         }
 
-        public static touchMove( e:MouseEvent )
+        public static touchMove( e )
         {
             if ( LibTouchSystem.touchPressed )
             {

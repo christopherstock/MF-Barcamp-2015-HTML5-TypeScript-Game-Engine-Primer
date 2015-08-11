@@ -19,12 +19,20 @@
 
             document.addEventListener( "keydown", function( e )
             {
-                LibKeySystem.keys[ e.keyCode ] = true;
+                LibKeySystem.keyDown( <KeyboardEvent>e );
+            }, false );
+            document.addEventListener( "onkeydown", function( e )
+            {
+                LibKeySystem.keyDown( <KeyboardEvent>e );
             }, false );
 
             document.addEventListener( "keyup", function( e )
             {
-                LibKeySystem.keys[ e.keyCode ] = false;
+                LibKeySystem.keyUp( <KeyboardEvent>e );
+            }, false );
+            document.addEventListener( "onkeyup", function( e )
+            {
+                LibKeySystem.keyUp( <KeyboardEvent>e );
             }, false );
         }
 
@@ -38,5 +46,15 @@
         public static isKeyPressed( keyCode:number )
         {
             return LibKeySystem.keys[ keyCode ];
+        }
+
+        public static keyDown( e:KeyboardEvent )
+        {
+            LibKeySystem.keys[ e.keyCode ] = true;
+        }
+
+        public static keyUp( e:KeyboardEvent )
+        {
+            LibKeySystem.keys[ e.keyCode ] = false;
         }
     }
